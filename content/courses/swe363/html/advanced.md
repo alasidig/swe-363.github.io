@@ -1,0 +1,18 @@
+---
+title: "HTML Advanced"
+date: 2022-01-12T09:36:41+03:00
+draft: false
+summary: Some advanced tags in HTML like forms and tables.
+weight: 4
+tags: [html, front-end]
+toc: true  # Show table of contents? true/false
+type: docs  # Do not modify.
+menu:
+  swe363:
+    html:
+      name: HTML Advanced 
+      weight: 3
+---
+## title
+content for later
+
