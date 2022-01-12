@@ -2,9 +2,9 @@
     <summary>
         {{ .Get "title" }}
     </summary>
-    <code>
-     {{ .Inner }}   
-    </code>
+
+    {{ .Inner | markdownify | emojify }}
+
 
 
 </details>
