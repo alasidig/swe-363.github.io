@@ -94,7 +94,22 @@
 </ul>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#title>title</a></li>
+<li><a href=#objectives>Objectives:</a></li>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#worked-example>Worked Example</a>
+<ul>
+<li><a href=#the-input-field>The <code>&lt;input></code> field</a></li>
+<li><a href=#the-textarea-field>The <code>&lt;textarea></code> field</a></li>
+<li><a href=#the-form-tag>The <code>&lt;form></code> tag</a></li>
+</ul>
+</li>
+<li><a href=#exercises>Exercises</a>
+<ul>
+<li><a href=#company-hiring-form>Company hiring form</a></li>
+<li><a href=#restaurant-table-reservation>Restaurant Table Reservation</a></li>
+</ul>
+</li>
+<li><a href=#more-resources>More Resources</a></li>
 </ul>
 </nav>
 </div>
@@ -103,12 +118,84 @@
 <div class=docs-article-container>
 <h1 itemprop=name>HTML Advanced</h1>
 <div class=article-style itemprop=articleBody>
-<h2 id=title>title</h2>
-<p>content for later</p>
+<h2 id=objectives>Objectives:</h2>
+<p>How we can write an HTML form and what is the rule of HTML forms</p>
+<h2 id=introduction>Introduction</h2>
+<p>Forms provide the user with a way to interact with a web server. An interactive website allows users to input data using forms. Forms are frontend to backend data transformers.</p>
+<p>For example, if we are going to design a website for fast food. The front end should show some images of the meals. And also the user should be able to click somewhere on the page to add to the shopping cart. And when checking out, he should be able to set his address to deliver the food in a form. So all that should be done on the front end. But we also need to pass data from the front end to the back end so that the admin of this restaurant to be able to serve this customer. The admin will have another view which talks to the database and tell the admin that some person here is ordering a meal and he would like to get it in that address.</p>
+<p><img src=https://www.javascript-coder.com/html-form/images/server-side-script-part.png alt="Form sent to the server" title="The frontend enables the user to enter the data and submit it to the backend">
+Forms usually include a series of HTML <code>&lt;input></code> tags. There are many other tags, but input is the most used. Before HTML 5 there was a limited number of data entry controls that are available. In HTML 5 there are controls for entering text, choosing from a list of buttons and checkboxes, radio buttons ..etc. HTML 5 also added more new controls that we can use to customize options for existing controls.</p>
+<h2 id=worked-example>Worked Example</h2>
+<p>Let&rsquo;s create a simple form that asks the user for a feedback. The required fields includes his name, phone, and a message.
+<div class=responsive-wrap>
+<iframe src="https://replit.com/@alasidig/forms?lite=true" frameborder=0 width=960 height=569 allowfullscreen mozallowfullscreen=true webkitallowfullscreen=true></iframe>
+</div><br>
+The form starts from line 10 where we added the <code>&lt;form></code> tag. Then followed by an <code>&lt;input></code> tag for the user name, then another one for the phone, and finally a <code>&lt;textarea></code> to hold the message. The <code>&lt;ul></code> and <code>&lt;li></code> tags are used to format the fields to show in a vertical column because the <code>&lt;input></code> and <code>&lt;textarea></code> are <code>inline</code> elements. Click on the green button to see the output.</p>
+<h3 id=the-input-field>The <code>&lt;input></code> field</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>        &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;user&#34;</span> <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Enter your name&#34;</span> <span style=color:#a6e22e>required</span>&gt;
+</code></pre></div><ul>
+<li>It is a self closing tag</li>
+<li>The <code>type</code> attribute can have many values like number, email, password, &mldr;etc. It is helpful for simple validation and will render a sutable keyboard on the smartphones.</li>
+<li>The <code>placeholder</code> attribute is used to display a helping string to the the user what should he input in this field.</li>
+<li>The <code>required</code> attribute is used to force the user to fill the field before submission.</li>
+<li>The <code>name</code> attribute is used to communicate the entered values to the server. When submitting this form, a dictionary of keys and values will be created. The keys are what is being assigned to the <code>name</code> attribute. And the values are the user response for each field. Try to change the <code>name</code> attribute for the first <code>&lt;input></code> to user2 and see the result.</li>
+<li>Setting the <code>type</code> to submit will create a button to submit the form and enable submitting the form by just pressing the enter key on the keyboard.</li>
+<li>There are many other attributes not added here such as <code>value</code>, <code>onkeyup</code>, &mldr;</li>
+</ul>
+<h3 id=the-textarea-field>The <code>&lt;textarea></code> field</h3>
+<ul>
+<li>It is used to enable the user to enter more than one line of text.</li>
+<li>There are some other attributes not added here such as <code>rows</code>, <code>cols</code>,&mldr;</li>
+</ul>
+<h3 id=the-form-tag>The <code>&lt;form></code> tag</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>form</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;result.html&#34;</span> <span style=color:#a6e22e>method</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;get&#34;</span>&gt;
+</code></pre></div><ul>
+<li>It wraps the input fields.</li>
+<li>The <code>action</code> attribute tels where to submit the form. It accept the URL of the server that will process the form data. Since we are only discussing the frontend now, the server side script will not be discussed.</li>
+<li>There are many other attributes not added here such as <code>onsubmit</code>, <code>enctype</code>, &mldr;</li>
+<li>The <code>method</code> attribute determines how to submit the form. It can be set to <code>get</code> or <code>post</code>. There are some differences between the two methods as shown in the following video
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/Vk2Rm6tthz8 style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+</li>
+</ul>
+<h2 id=exercises>Exercises</h2>
+<h3 id=company-hiring-form>Company hiring form</h3>
+<details>
+<summary>
+Expand
+</summary>
+Create a web page for a company of your choice it should contain some description, products, images, and a large title: <strong>We are hiring join us by filling this application.</strong> the title should link to a page that contains the following form:
+<img src=../jop_form.png alt=job_form.png>
+</details>
+<h3 id=restaurant-table-reservation>Restaurant Table Reservation</h3>
+<details>
+<summary>
+Expand
+</summary>
+<p>create a web page for a restaurant. it should contain an image and a list of meals with some description. it should contain a link to another page that contains a form to reserve a table like the following.</p>
+<p><img src=../table_form.gif alt=table_form.gif></p>
+</details>
+<h2 id=more-resources>More Resources</h2>
+<ul>
+<li><a href=https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form target=_blank>
+Your first form
+</a></li>
+<li><a href=https://developer.mozilla.org/en-US/docs/Learn/Forms/Basic_native_form_controls target=_blank>
+Basic native form controls
+</a></li>
+<li><a href=https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types target=_blank>
+The HTML5 input types
+</a></li>
+<li><a href=https://webaim.org/techniques/forms/controls target=_blank>
+Creating Accessible Forms
+</a></li>
+</ul>
 </div>
 <div class=article-tags>
 <a class="badge badge-light" href=/swe-363.github.io/tags/html/>html</a>
 <a class="badge badge-light" href=/swe-363.github.io/tags/front-end/>front-end</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/form-fields/>form-fields</a>
 </div>
 <div class=article-widget>
 <div class=post-nav>
