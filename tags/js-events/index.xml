@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JS Events on Alaaddin</title><link>http://alasidig.github.io/swe-363.github.io/tags/js-events/</link><description>Recent content in JS Events on Alaaddin</description><generator>Source Themes academia (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright &amp;copy; {year}</copyright><lastBuildDate>Sun, 20 Feb 2022 09:13:09 +0300</lastBuildDate><atom:link href="http://alasidig.github.io/swe-363.github.io/tags/js-events/index.xml" rel="self" type="application/rss+xml"/><item><title>JS Events</title><link>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/events/</link><pubDate>Sun, 20 Feb 2022 09:13:09 +0300</pubDate><guid>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/events/</guid><description>&lt;h2 id="objectives">Objectives&lt;/h2>
+&lt;p>Learn the basics of using JavaScript for listening and responding to different events that may happen in a web page.&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In a web page, many events can occur. When the page loads, when clicking on a button, when changing a selection of choices, when pressing a key on the keyboard editing some input, and many others. JavaScript can listen for these events and execute some code to customize the behaviour in response the their occurrence.&lt;/p>
+&lt;h2 id="worked-example">Worked Example&lt;/h2>
+&lt;p>In this handout, we will use JavaScript to listen and handle different events. The final behaviour looks as follows.
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/AYqYlJEppq4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;/p>
+&lt;ol>
+&lt;li>After two seconds from loading the page, the form disappears.&lt;/li>
+&lt;li>Clicking on the button reveals the form and disappears.&lt;/li>
+&lt;li>Capitalize the first name as the user types&lt;/li>
+&lt;li>Validate that the email is filled before submitting the form&lt;/li>
+&lt;li>Validate that the username only contains alphanumeric characters and underscores&lt;/li>
+&lt;li>Remind the user to receive our promotion and respect his decision&lt;/li>
+&lt;/ol>
+&lt;p>It is recommended that you write the code your self before expanding the given solution. Try to avoid coping and pasting.&lt;/p>
+&lt;h3 id="html-code">HTML code&lt;/h3>
+&lt;p>In the HTML body, we would like to have a form to demonstrate different events and how to handle them.
+&lt;details>
+&lt;summary>
+Index.html
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">http-equiv&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;X-UA-Compatible&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;IE=edge&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;JS Demo&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#a6e22e">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;style.css&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;showForm(this)&amp;#34;&lt;/span>&amp;gt;click to register&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">form&lt;/span> &lt;span style="color:#a6e22e">onsubmit&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;return validate()&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">action&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;register&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;GET&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;form&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">autocomplete&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;off&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">onkeyup&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;capitalize(this)&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;firstname&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;first name&amp;#34;&lt;/span>&amp;gt;
+&lt;/span> &amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;email&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;email&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;email&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;username&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;checkbox&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;promo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;promo&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">label&lt;/span> &lt;span style="color:#a6e22e">for&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;promo&amp;#34;&lt;/span>&amp;gt;Send me Promotions&amp;lt;/&lt;span style="color:#f92672">label&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;submit&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">value&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Submit&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">form&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;index.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/span> &amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+As shown in line 8 and 21 we are linking external CSS and JS files.&lt;/p>
+&lt;h3 id="simple-style">Simple Style&lt;/h3>
+&lt;details>
+&lt;summary>
+Simple CSS rules
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">body&lt;/span>{
+&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">antiquewhite&lt;/span>;
+}
+.&lt;span style="color:#a6e22e">form&lt;/span> &lt;span style="color:#f92672">input&lt;/span>{
+&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">block&lt;/span>;
+&lt;span style="color:#66d9ef">margin-top&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">.75&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+}
+&lt;span style="color:#f92672">button&lt;/span>{
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">em&lt;/span>;
+&lt;span style="color:#66d9ef">font-size&lt;/span>: &lt;span style="color:#ae81ff">1.2&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="1-js-listening-and-responding-to-page-load">1. JS Listening and responding to page &lt;code>load&lt;/code>&lt;/h3>
+&lt;p>Page loading is one of the &lt;code>window&lt;/code> related events.
+It is fired when the browser completes loading the page components (HTML,CSS,JS).&lt;br>
+To target this event, we provide a handler to be called when the event fires. In this example, we would like to wait for 2 seconds then hide the form. This can be done using &lt;code>setTimeout&lt;/code>.&lt;/p>
+&lt;p>As shown in the video, the form slides out of the screen. This can be done by changing its CSS &lt;code>margin-left&lt;/code> to a negative value.
+To get a reference to the form we can use the &lt;code>DOM&lt;/code> to find an HTML element named &lt;code>register&lt;/code>.
+To change the CSS style of an element we can set the desired property on &lt;code>element.style&lt;/code>. The name of the property (&lt;code>margin-left&lt;/code> in our case) will be the same except it is camelCased (ie &lt;code>marginLeft&lt;/code>).
+&lt;details>
+&lt;summary>
+Hide the form
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="display:block;width:100%;background-color:#3c3d38">document.&lt;span style="color:#a6e22e">onload&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">setTimeout&lt;/span>(&lt;span style="color:#a6e22e">hideForm&lt;/span>, &lt;span style="color:#ae81ff">2000&lt;/span>);
+&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">form&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">register&lt;/span>;
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">hideForm&lt;/span>() {
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &lt;span style="color:#a6e22e">form&lt;/span>.&lt;span style="color:#a6e22e">style&lt;/span>.&lt;span style="color:#a6e22e">marginLeft&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;-300px&amp;#34;&lt;/span>;
+&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="2-reshowing-the-form-onclick">2. Reshowing the form &lt;code>onclick&lt;/code>&lt;/h3>
+&lt;p>The first element in the HTML body is a button. As on line 12, we added &lt;code>onclick&lt;/code> attribute to the button. This is the second way to listen and respond to events.
+When the user clicks on this button the function named &lt;code>showForm&lt;/code> will be called.
+To show the form we can reverse the way it was hidden by resetting the &lt;code>left-margin&lt;/code> to 0.
+The parameter &lt;code>this&lt;/code> is a reference to the clicked button. We can use this reference to hide the button. It will be assigned to the &lt;code>eventSource&lt;/code> parameter.
+&lt;details>
+&lt;summary>
+Reshow the form
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">showForm&lt;/span>(&lt;span style="color:#a6e22e">eventSource&lt;/span>) {
+&lt;span style="color:#a6e22e">form&lt;/span>.&lt;span style="color:#a6e22e">style&lt;/span>.&lt;span style="color:#a6e22e">marginLeft&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;0px&amp;#34;&lt;/span>;
+&lt;span style="color:#a6e22e">eventSource&lt;/span>.&lt;span style="color:#a6e22e">style&lt;/span>.&lt;span style="color:#a6e22e">display&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;none&amp;#34;&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="3-capitalize-the-first-name-as-the-user-types">3. Capitalize the first name as the user types&lt;/h3>
+&lt;p>To change the case as the user types, we target the &lt;code>onkeyup&lt;/code> keyboard event on the first-name field as in line 14.
+This event will be fired after each keyboard keypress. When it occurs, the &lt;code>value&lt;/code> attribute holds the current entered text. We replace it with the capital version using the &lt;code>toUpperCase&lt;/code> string function.
+&lt;details>
+&lt;summary>
+Capitalize text
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">capitalize&lt;/span>(&lt;span style="color:#a6e22e">inputField&lt;/span>) {
+&lt;span style="color:#a6e22e">inputField&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">inputField&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>.&lt;span style="color:#a6e22e">toUpperCase&lt;/span>();
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="4-validate-that-the-email-is-filled-before-submitting-the-form">4. Validate that the email is filled before submitting the form&lt;/h3>
+&lt;p>So far we targeted individual inputs and handled events on them. But now we are interested in validating the form before we send it to the server.
+There are different levels of validating the form. The first, using HTML 5 tags: by setting the type to &lt;code>email&lt;/code>, the browsers will validate that it at least contains &lt;code>@&lt;/code> symbol.
+The second level, using client-side javascript: by handling the &lt;code>onsubmit&lt;/code> form event and check the inputs before submitting.
+The third level using server-side scripting when receiving the form data.&lt;/p>
+&lt;p>In this step, we do the second level of validation. As shown in line 13 of the HTML, the &lt;code>&amp;lt;form&amp;gt;&lt;/code> tag sets the &lt;code>onsubmit&lt;/code> handler to the return of &lt;code>validate()&lt;/code>.
+This means if this function returns &lt;code>true&lt;/code>, the form is valid and can be sent to the server. Otherwise, it is not valid and we should not send it. For the email field w&amp;rsquo;d like to make sure it is filled before submitting the form.
+We need a reference to the email field to check the length of its &lt;code>value&lt;/code>. If it is zero, this means the user didn&amp;rsquo;t provide the email and shouldn&amp;rsquo;t submit this form. &lt;br>
+&lt;details>
+&lt;summary>
+Form Validation: Required Email
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">validate&lt;/span>() {
+&lt;span style="color:#75715e">// validate the email
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">email&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">register&lt;/span>.&lt;span style="color:#a6e22e">email&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>; &lt;span style="color:#75715e">// find the value of the email
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">email&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span> &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+&lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;invalid email&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+}
+&lt;span style="color:#75715e">// validate the user name
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// validate the promotion
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>; &lt;span style="color:#75715e">// all validations passed successfully
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="5-validate-that-the-username-only-contains-alphanumeric-characters-and-underscores">5. Validate that the username only contains alphanumeric characters and underscores&lt;/h3>
+&lt;p>Following the same steps of validating the email, we can check the validity of the username. The problem here is to make sure
+that only alphanumeric and underscores are used. Since the username can be in any form of combination of these characters,
+this means using &lt;code>regural expression&lt;/code> is one of the best ways to validate it. The following regular expression can be used to check for that &lt;code>^[a-zA-Z0-9_]+$&lt;/code>.
+Following is the explanation of this regex:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>^&lt;/code> asserts position at start of a line&lt;/li>
+&lt;li>Match a single character present in the list below [a-zA-Z0-9_]&lt;/li>
+&lt;li>&lt;code>+&lt;/code> matches the previous token between &lt;strong>one&lt;/strong> and &lt;strong>unlimited&lt;/strong> times, as many times as possible,&lt;/li>
+&lt;li>&lt;code>a-z&lt;/code> matches a single character in the range between a (index 97) and z (index 122) (case sensitive)&lt;/li>
+&lt;li>&lt;code>A-Z&lt;/code> matches a single character in the range between A (index 65) and Z (index 90) (case sensitive)&lt;/li>
+&lt;li>&lt;code>0-9&lt;/code> matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)&lt;/li>
+&lt;li>&lt;code>_&lt;/code> matches the character _ with index 95 literally (case sensitive)&lt;/li>
+&lt;li>&lt;code>$&lt;/code> asserts position at the end of a line.&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>test&lt;/code> function checks if the string (&lt;code>username.value&lt;/code> ) satisfies all of above conditions
+&lt;details>
+&lt;summary>
+function validate() continuation: username
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">//validate the user name
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">username&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">register&lt;/span>.&lt;span style="color:#a6e22e">username&lt;/span>;
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">regex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">/^[a-zA-Z0-9_]+$/&lt;/span>;
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">regex&lt;/span>.&lt;span style="color:#a6e22e">test&lt;/span>(&lt;span style="color:#a6e22e">username&lt;/span>.&lt;span style="color:#a6e22e">value&lt;/span>)) {
+&lt;span style="color:#a6e22e">alert&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;invalid username&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">username&lt;/span>.&lt;span style="color:#a6e22e">focus&lt;/span>();
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="6-remind-the-user-to-receive-our-promotion-and-respect-his-decision">6. Remind the user to receive our promotion and respect his decision&lt;/h3>
+&lt;p>This is a soft validation, if the user choose not receive promotions, we remind him before submitting. If he accepts after the reminder we submit the form showing that he accepted.
+And if he declines after the reminder we submit the form respecting his choice.
+The &lt;code>confirm&lt;/code> function presents the user the prompt. It returns &lt;code>true&lt;/code> if the user clicks on &lt;code>Ok&lt;/code> and &lt;code>false&lt;/code> when he clicks on &lt;code>Cancel&lt;/code>&lt;/p>
+&lt;details>
+&lt;summary>
+function validate() continuation: promotion
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">// validate the promotion
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">promoCheck&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelector&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;#promo&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">promoCheck&lt;/span>.&lt;span style="color:#a6e22e">checked&lt;/span>) {
+&lt;span style="color:#a6e22e">promoCheck&lt;/span>.&lt;span style="color:#a6e22e">checked&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">confirm&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;If you don&amp;#39;t want miss our promotion click ok&amp;#34;&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="exercises">Exercises&lt;/h2>
+&lt;h3 id="suggested-changes-on-the-example">Suggested changes on the example&lt;/h3>
+&lt;ul>
+&lt;li>Add regex validation for the email.&lt;/li>
+&lt;li>Replace the &lt;code>alert&lt;/code> calls by placing the error message beside the input field.&lt;/li>
+&lt;li>Add a reset button and clear all the input fields when clicked.&lt;/li>
+&lt;/ul>
+&lt;h3 id="validate-the-company-hiring-form">Validate the company hiring form&lt;/h3>
+&lt;details>
+&lt;summary>
+Expand
+&lt;/summary>
+&lt;p>Validate the form give in &lt;a href="http://localhost:1313/swe-363.github.io/courses/swe363/html/advanced/#company-hiring-form">This Exercise&lt;/a>.&lt;/p>
+&lt;ul>
+&lt;li>All fields labeled with red star are required.&lt;/li>
+&lt;li>The date for &lt;strong>When can you start?&lt;/strong> must be after the date of filling the form.&lt;/li>
+&lt;li>A maximum 200 characters comment.&lt;/li>
+&lt;/ul>
+&lt;/details></description></item></channel></rss>

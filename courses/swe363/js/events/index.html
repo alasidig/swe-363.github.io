@@ -1,0 +1,535 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Source Themes Academia 4.3.1">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=author content="Alaaddin Sabr">
+<meta name=description content="Listening and responding to events in JavaScript.">
+<link rel=alternate hreflang=en-us href=http://alasidig.github.io/swe-363.github.io/courses/swe363/js/events/>
+<meta name=theme-color content="#4caf50">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.0/css/all.css integrity=sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css crossorigin=anonymous title=hl-light>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+<link rel=stylesheet href=/swe-363.github.io/css/academia.min.18c56bf5da5ceccfdffec5d8793e1804.css>
+<link rel=manifest href=/swe-363.github.io/site.webmanifest>
+<link rel=icon type=image/png href=/swe-363.github.io/img/icon.png>
+<link rel=apple-touch-icon type=image/png href=/swe-363.github.io/img/icon-192.png>
+<link rel=canonical href=http://alasidig.github.io/swe-363.github.io/courses/swe363/js/events/>
+<meta property="twitter:card" content="summary">
+<meta property="og:site_name" content="Alaaddin">
+<meta property="og:url" content="http://alasidig.github.io/swe-363.github.io/courses/swe363/js/events/">
+<meta property="og:title" content="JS Events | Alaaddin">
+<meta property="og:description" content="Listening and responding to events in JavaScript."><meta property="og:image" content="http://alasidig.github.io/swe-363.github.io/img/icon-192.png">
+<meta property="twitter:image" content="http://alasidig.github.io/swe-363.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+<meta property="article:published_time" content="2022-02-20T09:13:09+03:00">
+<meta property="article:modified_time" content="2022-02-20T09:13:09+03:00">
+<title>JS Events | Alaaddin</title>
+</head>
+<body id=top data-spy=scroll data-target=#TableOfContents data-offset=71>
+<aside class=search-results id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id=navbar-main>
+<div class=container>
+<a class=navbar-brand href=/swe-363.github.io/>Alaaddin</a>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+</button>
+<div class="collapse navbar-collapse" id=navbar>
+<ul class="navbar-nav ml-auto">
+<li class=nav-item>
+<a class="nav-link active" href=/swe-363.github.io/courses/><span>Courses</span></a>
+</li>
+<li class=nav-item>
+<a class="nav-link js-dark-toggle" href=#><i class="fas fa-moon" aria-hidden=true></i></a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container-fluid docs">
+<div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+<form class="docs-search d-flex align-items-center">
+<button class="btn docs-toggle d-md-none p-0 mr-3" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+</form>
+<nav class="collapse docs-links" id=docs-nav>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/>Overview</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/html/basics/>HTML Basics</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/html/advanced/>HTML Advanced</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/css/css_basics/>CSS Basics</a>
+</div>
+<div class="docs-toc-item active">
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/js/events/>JS Events</a>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 docs-toc">
+<ul class="nav toc-top">
+<li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li>
+</ul>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#objectives>Objectives</a></li>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#worked-example>Worked Example</a>
+<ul>
+<li><a href=#html-code>HTML code</a></li>
+<li><a href=#simple-style>Simple Style</a></li>
+<li><a href=#1-js-listening-and-responding-to-page-load>1. JS Listening and responding to page <code>load</code></a></li>
+<li><a href=#2-reshowing-the-form-onclick>2. Reshowing the form <code>onclick</code></a></li>
+<li><a href=#3-capitalize-the-first-name-as-the-user-types>3. Capitalize the first name as the user types</a></li>
+<li><a href=#4-validate-that-the-email-is-filled-before-submitting-the-form>4. Validate that the email is filled before submitting the form</a></li>
+<li><a href=#5-validate-that-the-username-only-contains-alphanumeric-characters-and-underscores>5. Validate that the username only contains alphanumeric characters and underscores</a></li>
+<li><a href=#6-remind-the-user-to-receive-our-promotion-and-respect-his-decision>6. Remind the user to receive our promotion and respect his decision</a></li>
+</ul>
+</li>
+<li><a href=#exercises>Exercises</a>
+<ul>
+<li><a href=#suggested-changes-on-the-example>Suggested changes on the example</a></li>
+<li><a href=#validate-the-company-hiring-form>Validate the company hiring form</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
+<article class=article itemscope itemtype=http://schema.org/Article>
+<div class=docs-article-container>
+<h1 itemprop=name>JS Events</h1>
+<div class=article-style itemprop=articleBody>
+<h2 id=objectives>Objectives</h2>
+<p>Learn the basics of using JavaScript for listening and responding to different events that may happen in a web page.</p>
+<h2 id=introduction>Introduction</h2>
+<p>In a web page, many events can occur. When the page loads, when clicking on a button, when changing a selection of choices, when pressing a key on the keyboard editing some input, and many others. JavaScript can listen for these events and execute some code to customize the behaviour in response the their occurrence.</p>
+<h2 id=worked-example>Worked Example</h2>
+<p>In this handout, we will use JavaScript to listen and handle different events. The final behaviour looks as follows.
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/AYqYlJEppq4 style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<ol>
+<li>After two seconds from loading the page, the form disappears.</li>
+<li>Clicking on the button reveals the form and disappears.</li>
+<li>Capitalize the first name as the user types</li>
+<li>Validate that the email is filled before submitting the form</li>
+<li>Validate that the username only contains alphanumeric characters and underscores</li>
+<li>Remind the user to receive our promotion and respect his decision</li>
+</ol>
+<p>It is recommended that you write the code your self before expanding the given solution. Try to avoid coping and pasting.</p>
+<h3 id=html-code>HTML code</h3>
+<p>In the HTML body, we would like to have a form to demonstrate different events and how to handle them.
+<details>
+<summary>
+Index.html
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+ &lt;<span style=color:#f92672>html</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+ &lt;<span style=color:#f92672>head</span>&gt;
+     &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;UTF-8&#34;</span>&gt;
+     &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>http-equiv</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;X-UA-Compatible&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;IE=edge&#34;</span>&gt;
+     &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewport&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+     &lt;<span style=color:#f92672>title</span>&gt;JS Demo&lt;/<span style=color:#f92672>title</span>&gt;
+     &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;style.css&#34;</span>&gt;
+ &lt;/<span style=color:#f92672>head</span>&gt;
+ 
+ &lt;<span style=color:#f92672>body</span>&gt;
+<span style=display:block;width:100%;background-color:#3c3d38>     &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;showForm(this)&#34;</span>&gt;click to register&lt;/<span style=color:#f92672>button</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>     &lt;<span style=color:#f92672>form</span> <span style=color:#a6e22e>onsubmit</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;return validate()&#34;</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;register&#34;</span> <span style=color:#a6e22e>method</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;GET&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span> <span style=color:#a6e22e>autocomplete</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;off&#34;</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>         &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>onkeyup</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;capitalize(this)&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;firstname&#34;</span> <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;first name&#34;</span>&gt;
+</span>         &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;email&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;email&#34;</span> <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;email&#34;</span>&gt;
+         &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span> <span style=color:#a6e22e>placeholder</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;
+         &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;checkbox&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;promo&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;promo&#34;</span>&gt;
+         &lt;<span style=color:#f92672>label</span> <span style=color:#a6e22e>for</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;promo&#34;</span>&gt;Send me Promotions&lt;/<span style=color:#f92672>label</span>&gt;
+         &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span> <span style=color:#a6e22e>value</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Submit&#34;</span>&gt;
+     &lt;/<span style=color:#f92672>form</span>&gt;
+<span style=display:block;width:100%;background-color:#3c3d38>     &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;index.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span> &lt;/<span style=color:#f92672>body</span>&gt;
+ &lt;/<span style=color:#f92672>html</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+As shown in line 8 and 21 we are linking external CSS and JS files.</p>
+<h3 id=simple-style>Simple Style</h3>
+<details>
+<summary>
+Simple CSS rules
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#f92672>body</span>{
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>antiquewhite</span>;
+}
+.<span style=color:#a6e22e>form</span> <span style=color:#f92672>input</span>{
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>block</span>;
+    <span style=color:#66d9ef>margin-top</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.75</span><span style=color:#66d9ef>rem</span>;
+}
+<span style=color:#f92672>button</span>{
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>em</span>;
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>1.2</span><span style=color:#66d9ef>rem</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<h3 id=1-js-listening-and-responding-to-page-load>1. JS Listening and responding to page <code>load</code></h3>
+<p>Page loading is one of the <code>window</code> related events.
+It is fired when the browser completes loading the page components (HTML,CSS,JS).<br>
+To target this event, we provide a handler to be called when the event fires. In this example, we would like to wait for 2 seconds then hide the form. This can be done using <code>setTimeout</code>.</p>
+<p>As shown in the video, the form slides out of the screen. This can be done by changing its CSS <code>margin-left</code> to a negative value.
+To get a reference to the form we can use the <code>DOM</code> to find an HTML element named <code>register</code>.
+To change the CSS style of an element we can set the desired property on <code>element.style</code>. The name of the property (<code>margin-left</code> in our case) will be the same except it is camelCased (ie <code>marginLeft</code>).
+<details>
+<summary>
+Hide the form
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:block;width:100%;background-color:#3c3d38>document.<span style=color:#a6e22e>onload</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>hideForm</span>, <span style=color:#ae81ff>2000</span>);
+</span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>form</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>register</span>;
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>hideForm</span>() {
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>form</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>marginLeft</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;-300px&#34;</span>;
+</span>}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=2-reshowing-the-form-onclick>2. Reshowing the form <code>onclick</code></h3>
+<p>The first element in the HTML body is a button. As on line 12, we added <code>onclick</code> attribute to the button. This is the second way to listen and respond to events.
+When the user clicks on this button the function named <code>showForm</code> will be called.
+To show the form we can reverse the way it was hidden by resetting the <code>left-margin</code> to 0.
+The parameter <code>this</code> is a reference to the clicked button. We can use this reference to hide the button. It will be assigned to the <code>eventSource</code> parameter.
+<details>
+<summary>
+Reshow the form
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>showForm</span>(<span style=color:#a6e22e>eventSource</span>) {
+    <span style=color:#a6e22e>form</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>marginLeft</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;0px&#34;</span>;
+    <span style=color:#a6e22e>eventSource</span>.<span style=color:#a6e22e>style</span>.<span style=color:#a6e22e>display</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;none&#34;</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=3-capitalize-the-first-name-as-the-user-types>3. Capitalize the first name as the user types</h3>
+<p>To change the case as the user types, we target the <code>onkeyup</code> keyboard event on the first-name field as in line 14.
+This event will be fired after each keyboard keypress. When it occurs, the <code>value</code> attribute holds the current entered text. We replace it with the capital version using the <code>toUpperCase</code> string function.
+<details>
+<summary>
+Capitalize text
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>capitalize</span>(<span style=color:#a6e22e>inputField</span>) {
+    <span style=color:#a6e22e>inputField</span>.<span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>inputField</span>.<span style=color:#a6e22e>value</span>.<span style=color:#a6e22e>toUpperCase</span>();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=4-validate-that-the-email-is-filled-before-submitting-the-form>4. Validate that the email is filled before submitting the form</h3>
+<p>So far we targeted individual inputs and handled events on them. But now we are interested in validating the form before we send it to the server.
+There are different levels of validating the form. The first, using HTML 5 tags: by setting the type to <code>email</code>, the browsers will validate that it at least contains <code>@</code> symbol.
+The second level, using client-side javascript: by handling the <code>onsubmit</code> form event and check the inputs before submitting.
+The third level using server-side scripting when receiving the form data.</p>
+<p>In this step, we do the second level of validation. As shown in line 13 of the HTML, the <code>&lt;form></code> tag sets the <code>onsubmit</code> handler to the return of <code>validate()</code>.
+This means if this function returns <code>true</code>, the form is valid and can be sent to the server. Otherwise, it is not valid and we should not send it. For the email field w&rsquo;d like to make sure it is filled before submitting the form.
+We need a reference to the email field to check the length of its <code>value</code>. If it is zero, this means the user didn&rsquo;t provide the email and shouldn&rsquo;t submit this form. <br>
+<details>
+<summary>
+Form Validation: Required Email
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>validate</span>() {
+<span style=color:#75715e>// validate the email    
+</span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>email</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>register</span>.<span style=color:#a6e22e>email</span>.<span style=color:#a6e22e>value</span>; <span style=color:#75715e>// find the value of the email
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>email</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) {
+      <span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;invalid email&#34;</span>);
+      <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+  }
+
+<span style=color:#75715e>// validate the user name
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>// validate the promotion
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>true</span>; <span style=color:#75715e>// all validations passed successfully
+</span><span style=color:#75715e></span>}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=5-validate-that-the-username-only-contains-alphanumeric-characters-and-underscores>5. Validate that the username only contains alphanumeric characters and underscores</h3>
+<p>Following the same steps of validating the email, we can check the validity of the username. The problem here is to make sure
+that only alphanumeric and underscores are used. Since the username can be in any form of combination of these characters,
+this means using <code>regural expression</code> is one of the best ways to validate it. The following regular expression can be used to check for that <code>^[a-zA-Z0-9_]+$</code>.
+Following is the explanation of this regex:</p>
+<ul>
+<li><code>^</code> asserts position at start of a line</li>
+<li>Match a single character present in the list below [a-zA-Z0-9_]</li>
+<li><code>+</code> matches the previous token between <strong>one</strong> and <strong>unlimited</strong> times, as many times as possible,</li>
+<li><code>a-z</code> matches a single character in the range between a (index 97) and z (index 122) (case sensitive)</li>
+<li><code>A-Z</code> matches a single character in the range between A (index 65) and Z (index 90) (case sensitive)</li>
+<li><code>0-9</code> matches a single character in the range between 0 (index 48) and 9 (index 57) (case sensitive)</li>
+<li><code>_</code> matches the character _ with index 95 literally (case sensitive)</li>
+<li><code>$</code> asserts position at the end of a line.</li>
+</ul>
+<p>The <code>test</code> function checks if the string (<code>username.value</code> ) satisfies all of above conditions
+<details>
+<summary>
+function validate() continuation: username
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>//validate the user name
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>username</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>register</span>.<span style=color:#a6e22e>username</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>regex</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>/^[a-zA-Z0-9_]+$/</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>regex</span>.<span style=color:#a6e22e>test</span>(<span style=color:#a6e22e>username</span>.<span style=color:#a6e22e>value</span>)) {
+        <span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;invalid username&#34;</span>);
+        <span style=color:#a6e22e>username</span>.<span style=color:#a6e22e>focus</span>();
+        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+    }
+
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=6-remind-the-user-to-receive-our-promotion-and-respect-his-decision>6. Remind the user to receive our promotion and respect his decision</h3>
+<p>This is a soft validation, if the user choose not receive promotions, we remind him before submitting. If he accepts after the reminder we submit the form showing that he accepted.
+And if he declines after the reminder we submit the form respecting his choice.
+The <code>confirm</code> function presents the user the prompt. It returns <code>true</code> if the user clicks on <code>Ok</code> and <code>false</code> when he clicks on <code>Cancel</code></p>
+<details>
+<summary>
+function validate() continuation: promotion
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>// validate the promotion
+</span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>promoCheck</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;#promo&#34;</span>);
+   <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>promoCheck</span>.<span style=color:#a6e22e>checked</span>) {
+       <span style=color:#a6e22e>promoCheck</span>.<span style=color:#a6e22e>checked</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>confirm</span>(<span style=color:#e6db74>&#34;If you don&#39;t want miss our promotion click ok&#34;</span>);
+   }
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<h2 id=exercises>Exercises</h2>
+<h3 id=suggested-changes-on-the-example>Suggested changes on the example</h3>
+<ul>
+<li>Add regex validation for the email.</li>
+<li>Replace the <code>alert</code> calls by placing the error message beside the input field.</li>
+<li>Add a reset button and clear all the input fields when clicked.</li>
+</ul>
+<h3 id=validate-the-company-hiring-form>Validate the company hiring form</h3>
+<details>
+<summary>
+Expand
+</summary>
+<p>Validate the form give in <a href=http://localhost:1313/swe-363.github.io/courses/swe363/html/advanced/#company-hiring-form>This Exercise</a>.</p>
+<ul>
+<li>All fields labeled with red star are required.</li>
+<li>The date for <strong>When can you start?</strong> must be after the date of filling the form.</li>
+<li>A maximum 200 characters comment.</li>
+</ul>
+</details>
+</div>
+<div class=article-tags>
+<a class="badge badge-light" href=/swe-363.github.io/tags/js/>JS</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/js-events/>JS Events</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/front-end/>front-end</a>
+</div>
+<div class=article-widget>
+<div class=post-nav>
+<div class=post-nav-item>
+<div class=meta-nav>Previous</div>
+<a href=/swe-363.github.io/courses/swe363/css/css_basics/ rel=next>CSS Basics</a>
+</div>
+</div>
+</div>
+</div>
+<div class=body-footer>
+Last updated on Sun, Feb 20, 2022
+</div>
+</article>
+<footer class=site-footer>
+<div class=container>
+<div class="row align-items-center">
+<div class="col-md-6 mb-4 mb-md-0">
+<p class=mb-0>
+Copyright © 2022 &#183;
+Powered by
+<a href=https://gethugothemes.com target=_blank rel=noopener>Gethugothemes</a>
+</p>
+</div>
+<div class=col-md-6>
+<ul class="list-inline network-icon text-right mb-0">
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin=anonymous></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin=anonymous></script>
+<script>anchors.add()</script>
+<script src=/swe-363.github.io/js/academia.min.e40e230d9b3dfeac86994156b6388764.js></script>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
