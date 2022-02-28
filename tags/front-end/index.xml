@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>front-end on Alaaddin</title><link>http://alasidig.github.io/swe-363.github.io/tags/front-end/</link><description>Recent content in front-end on Alaaddin</description><generator>Source Themes academia (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright &amp;copy; {year}</copyright><lastBuildDate>Sun, 20 Feb 2022 09:13:09 +0300</lastBuildDate><atom:link href="http://alasidig.github.io/swe-363.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml"/><item><title>HTML Basics</title><link>http://alasidig.github.io/swe-363.github.io/courses/swe363/html/basics/</link><pubDate>Wed, 12 Jan 2022 09:36:41 +0300</pubDate><guid>http://alasidig.github.io/swe-363.github.io/courses/swe363/html/basics/</guid><description>&lt;h2 id="html-5-semantic-tags">HTML 5 Semantic Tags&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>front-end on Alaaddin</title><link>http://alasidig.github.io/swe-363.github.io/tags/front-end/</link><description>Recent content in front-end on Alaaddin</description><generator>Source Themes academia (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright &amp;copy; {year}</copyright><lastBuildDate>Sun, 20 Feb 2022 16:35:53 +0300</lastBuildDate><atom:link href="http://alasidig.github.io/swe-363.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml"/><item><title>HTML Basics</title><link>http://alasidig.github.io/swe-363.github.io/courses/swe363/html/basics/</link><pubDate>Wed, 12 Jan 2022 09:36:41 +0300</pubDate><guid>http://alasidig.github.io/swe-363.github.io/courses/swe363/html/basics/</guid><description>&lt;h2 id="html-5-semantic-tags">HTML 5 Semantic Tags&lt;/h2>
 &lt;h3 id="objective">Objective&lt;/h3>
 &lt;p>To learn the page structure element elements in HTML5 and also to learn HTML5 Forms.&lt;/p>
 &lt;h3 id="some-html-5-semantic-tags">Some HTML 5 Semantic Tags&lt;/h3>
@@ -760,4 +760,941 @@ Expand
 &lt;li>The date for &lt;strong>When can you start?&lt;/strong> must be after the date of filling the form.&lt;/li>
 &lt;li>A maximum 200 characters comment.&lt;/li>
 &lt;/ul>
-&lt;/details></description></item></channel></rss>
+&lt;/details></description></item><item><title>DOM Manipulation</title><link>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/dom/</link><pubDate>Sun, 20 Feb 2022 16:35:53 +0300</pubDate><guid>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/dom/</guid><description>&lt;h2 id="objectives">Objectives&lt;/h2>
+&lt;p>Learn the basics of using JavaScript for modifying the HTML and CSS and responding to different events that may happen on a web page.&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>JavaScript describes the HTML structure in a tree-like object called the Document Object Model. It provides many functions to: select element\s on the HTML, create new element\s, style elements, &amp;hellip; etc.&lt;/p>
+&lt;h2 id="worked-example">Worked Example&lt;/h2>
+&lt;p>In this handout, we will use JavaScript to create a quiz-taking webapp. The final behavior looks as follows.
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe src="https://www.youtube.com/embed/FzsKSFoMZ3M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video">&lt;/iframe>
+&lt;/div>
+&lt;/p>
+&lt;ol>
+&lt;li>The user clicks on the &lt;code>Start&lt;/code> button to see the questions&lt;/li>
+&lt;li>Show a random question.&lt;/li>
+&lt;li>Change the background to reflect the correctness then disable the choices buttons.&lt;/li>
+&lt;li>Show the &lt;code>Next&lt;/code> button if there are more questions else show the score.&lt;/li>
+&lt;/ol>
+&lt;h3 id="html-code">HTML Code&lt;/h3>
+&lt;p>&lt;details>
+&lt;summary>
+Quiz App HTML
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;Exploring Dom&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#a6e22e">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;style.css&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;container&amp;#34;&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">h1&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;scoreMessage&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;question-card hide&amp;#34;&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">h1&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;question&amp;#34;&lt;/span>&amp;gt;What is 5+2&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;answers&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn &amp;#34;&lt;/span>&amp;gt;10&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn&amp;#34;&lt;/span>&amp;gt;12&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">data-correct&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn&amp;#34;&lt;/span>&amp;gt;7&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&lt;/span> &amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn&amp;#34;&lt;/span>&amp;gt;6&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;start&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;start()&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn&amp;#34;&lt;/span>&amp;gt;Start&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">button&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;next&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;btn hide&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onclick&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;goNext()&amp;#34;&lt;/span>&amp;gt;Next&amp;lt;/&lt;span style="color:#f92672">button&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;app.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+In line 15 the &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is used to display the question text. And the answers are wrapped in a &lt;code>div&lt;/code> inside the one with id=answers.
+The &lt;code>data-correct&lt;/code> attribute is added to the button that holds the correct answer.&lt;/p>
+&lt;h3 id="css-style">CSS Style&lt;/h3>
+&lt;p>&lt;details>
+&lt;summary>
+Quiz App CSS rules
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">body&lt;/span>{
+&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">vh&lt;/span>;
+&lt;span style="color:#66d9ef">background&lt;/span>:rgb(&lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">53&lt;/span>) linear-gradient(&lt;span style="color:#66d9ef">to&lt;/span> &lt;span style="color:#66d9ef">bottom&lt;/span> &lt;span style="color:#66d9ef">right&lt;/span>,rgb(&lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">17&lt;/span>, &lt;span style="color:#ae81ff">53&lt;/span>),rgb(&lt;span style="color:#ae81ff">67&lt;/span>, &lt;span style="color:#ae81ff">189&lt;/span>, &lt;span style="color:#ae81ff">67&lt;/span>));
+&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">flex&lt;/span>;
+&lt;span style="color:#66d9ef">justify-content&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
+&lt;span style="color:#66d9ef">align-items&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
+&lt;span style="color:#66d9ef">font-size&lt;/span>: &lt;span style="color:#ae81ff">62.5&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;span style="color:#66d9ef">box-sizing&lt;/span>: &lt;span style="color:#66d9ef">border-box&lt;/span>;
+}
+.&lt;span style="color:#a6e22e">container&lt;/span>{
+&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">flex&lt;/span>;
+&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">white&lt;/span>;
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">flex-direction&lt;/span>: &lt;span style="color:#66d9ef">column&lt;/span>;
+&lt;span style="color:#66d9ef">align-items&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
+&lt;span style="color:#66d9ef">justify-content&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
+&lt;span style="color:#66d9ef">justify-items&lt;/span>: &lt;span style="color:#66d9ef">center&lt;/span>;
+}
+.&lt;span style="color:#a6e22e">question-card&lt;/span>{
+&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">flex&lt;/span>;
+&lt;span style="color:#66d9ef">flex-direction&lt;/span>: &lt;span style="color:#66d9ef">column&lt;/span>;
+&lt;span style="color:#66d9ef">box-shadow&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span> &lt;span style="color:#ae81ff">.5&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span> ;
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">margin-bottom&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+}
+&lt;span style="display:block;width:100%;background-color:#3c3d38">.&lt;span style="color:#a6e22e">hide&lt;/span>{
+&lt;/span> &lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">none&lt;/span>;
+}
+.&lt;span style="color:#a6e22e">btn&lt;/span>{
+&lt;span style="color:#66d9ef">font-size&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">color&lt;/span>: &lt;span style="color:#66d9ef">white&lt;/span>;
+&lt;span style="color:#66d9ef">border&lt;/span>: &lt;span style="color:#66d9ef">transparent&lt;/span>;
+&lt;span style="color:#66d9ef">background-color&lt;/span>: rgb(&lt;span style="color:#ae81ff">197&lt;/span>, &lt;span style="color:#ae81ff">168&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;span style="color:#66d9ef">padding&lt;/span>: &lt;span style="color:#ae81ff">.5&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">.2&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+&lt;span style="color:#66d9ef">cursor&lt;/span>: &lt;span style="color:#66d9ef">pointer&lt;/span>;
+}
+.&lt;span style="color:#a6e22e">btn&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span>{
+&lt;span style="color:#66d9ef">transform&lt;/span>: scaleX(&lt;span style="color:#ae81ff">1.2&lt;/span>);
+&lt;span style="color:#66d9ef">box-shadow&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#ae81ff">.5&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span> &lt;span style="color:#ae81ff">.25&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+}
+&lt;span style="color:#f92672">h1&lt;/span>{
+&lt;span style="color:#66d9ef">font-size&lt;/span>: &lt;span style="color:#ae81ff">2.5&lt;/span>&lt;span style="color:#66d9ef">rem&lt;/span>;
+}
+#answers &lt;span style="color:#f92672">div&lt;/span>{
+&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">flex&lt;/span>;
+&lt;span style="color:#66d9ef">flex-direction&lt;/span>: &lt;span style="color:#66d9ef">column&lt;/span>;
+&lt;span style="color:#66d9ef">justify-content&lt;/span>: &lt;span style="color:#66d9ef">space-between&lt;/span>;
+}
+&lt;span style="display:block;width:100%;background-color:#3c3d38">.&lt;span style="color:#a6e22e">correct&lt;/span>{
+&lt;/span> &lt;span style="color:#66d9ef">background-color&lt;/span>: rgb(&lt;span style="color:#ae81ff">27&lt;/span>, &lt;span style="color:#ae81ff">133&lt;/span>, &lt;span style="color:#ae81ff">141&lt;/span>);
+}
+&lt;span style="display:block;width:100%;background-color:#3c3d38">.&lt;span style="color:#a6e22e">incorrect&lt;/span>{
+&lt;/span> &lt;span style="color:#66d9ef">background-color&lt;/span>: rgb(&lt;span style="color:#ae81ff">197&lt;/span>, &lt;span style="color:#ae81ff">74&lt;/span>, &lt;span style="color:#ae81ff">74&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+The class &lt;code>.hide&lt;/code> is used to hide the elements. It will be added and removed using Javascript to hide the &lt;code>next&lt;/code> button until the user chooses an answer.
+The classes &lt;code>.correct and .incorrect&lt;/code> are used to reflect the correctness of the chosen answer.&lt;/p>
+&lt;h3 id="javascript-skeleton">JavaScript Skeleton&lt;/h3>
+&lt;p>&lt;details>
+&lt;summary>
+The JavaScript Skeleton
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">135
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">136
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">137
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">138
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">139
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">140
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">141
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">142
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">143
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">144
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">145
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">146
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">147
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">148
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">149
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">150
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">151
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">152
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">153
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">154
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">155
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">156
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">157
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">158
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">159
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">160
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">161
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">162
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">163
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">164
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">165
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">166
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">167
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">168
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">169
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">170
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">171
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">172
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">173
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">174
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">175
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">176
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">177
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">178
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">179
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">180
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">181
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">182
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">/* find the elements */&lt;/span>
+&lt;span style="color:#75715e">/* start button*/&lt;/span>
+&lt;span style="color:#75715e">// const startBtn =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">/* the element that has the question-card class*/&lt;/span>
+&lt;span style="color:#75715e">// const cardEle =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/* the question title*/&lt;/span>
+&lt;span style="color:#75715e">// const qTitleEle =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">/* the element with the id of answers*/&lt;/span>
+&lt;span style="color:#75715e">// const choicesEle =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">/* the next button*/&lt;/span>
+&lt;span style="color:#75715e">// const nextBtn =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">currentQuestion&lt;/span>, &lt;span style="color:#a6e22e">qIndex&lt;/span>, &lt;span style="color:#a6e22e">score&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#a6e22e">points&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#a6e22e">maxPoints&lt;/span>;
+&lt;span style="color:#75715e">/* function called when clicking on the start button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">start&lt;/span>() {
+&lt;span style="color:#75715e">/* show the questions card cardEle*/&lt;/span>
+&lt;span style="color:#75715e">/* hide the start button*/&lt;/span>
+&lt;span style="color:#75715e">/* set the maximum points a user can get for solving all the questions*/&lt;/span>
+&lt;span style="color:#75715e">// maxPoints =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;start function called&amp;#39;&lt;/span>);
+&lt;span style="color:#a6e22e">createQuestion&lt;/span>();
+}
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">createQuestion&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Creating question&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* randomly select a question from the questions array*/&lt;/span>
+&lt;span style="color:#75715e">/* qIndex is the index of the question in the array*/&lt;/span>
+&lt;span style="color:#75715e">// qIndex =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// currentQuestion = questions[qIndex]
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">// qTitleEle /* fill the question title */
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/* remove the div that wraps all the answer buttons*/&lt;/span>
+&lt;span style="color:#75715e">// choicesEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">/* create a new div to wrap the choices*/&lt;/span>
+&lt;span style="color:#75715e">// let wrapper =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* add all the choices to this wrapper*/&lt;/span>
+&lt;span style="color:#75715e">// currentQuestion.choices.forEach(choice =&amp;gt; {
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// wrapper.appendChild(createChoice(choice))
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// });
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* add the wrapper to the choicesEle*/&lt;/span>
+&lt;span style="color:#75715e">// choicesEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* remove the selected question from the questions array so that it will not be shown again*/&lt;/span>
+&lt;span style="color:#75715e">// questions
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;span style="color:#75715e">/* function to create a button for each choice*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">createChoice&lt;/span>(&lt;span style="color:#a6e22e">choice&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;creating choice&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">choice&lt;/span>);
+&lt;span style="color:#75715e">/* create a button element*/&lt;/span>
+&lt;span style="color:#75715e">// let element =
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// element.classList.add(&amp;#34;btn&amp;#34;)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// element.innerText = choice.choice;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* create a data-correct attribute for the correct answer button*/&lt;/span>
+&lt;span style="color:#75715e">// if (choice.correct) {
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// element.dataset[&amp;#34;correct&amp;#34;] = true
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// }
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* add click event handler.*/&lt;/span>
+&lt;span style="color:#75715e">// element.addEventListener(&amp;#39;click&amp;#39;, answer)
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// return element;
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;span style="color:#75715e">/* function to handle the click on an answer button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">answer&lt;/span>(&lt;span style="color:#a6e22e">event&lt;/span>) {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">event&lt;/span>.&lt;span style="color:#a6e22e">srcElement&lt;/span>
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;user choose &amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">src&lt;/span>);
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">src&lt;/span>.&lt;span style="color:#a6e22e">dataset&lt;/span>[&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>]) {
+&lt;span style="color:#75715e">/* add the &amp;#39;correct&amp;#39; CSS class to both the button and the cardEle*/&lt;/span>
+&lt;span style="color:#75715e">// src
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// cardEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">/* update the user score*/&lt;/span>
+&lt;span style="color:#75715e">// score
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;span style="color:#75715e">/* add the &amp;#39;incorrect&amp;#39; CSS class to both the button and the cardEle*/&lt;/span>
+&lt;span style="color:#75715e">// src
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// cardEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> }
+&lt;span style="color:#a6e22e">proceed&lt;/span>();
+}
+&lt;span style="color:#75715e">/* function called after the click of an answer button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">proceed&lt;/span>() {
+&lt;span style="color:#75715e">/* disable the buttons so the user can&amp;#39;t change his answer*/&lt;/span>
+&lt;span style="color:#a6e22e">disableChoices&lt;/span>();
+&lt;span style="color:#75715e">/* then show the next button to move to next question*/&lt;/span>
+&lt;span style="color:#a6e22e">setTimeout&lt;/span>(&lt;span style="color:#a6e22e">showNext&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
+}
+&lt;span style="color:#75715e">/* function to disable the choices buttons*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">disableChoices&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;disabling the choices&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* find all choices buttons*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">choicesBtns&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelectorAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;button:not(.hide)&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">choicesBtns&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">btn&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">/* remove the click event handler so the button does nothing when clicked*/&lt;/span>
+&lt;span style="color:#75715e">// btn
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> });
+}
+&lt;span style="color:#75715e">/* function to show the next button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">showNext&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Show next button&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* remove the &amp;#39;correct&amp;#39; and the &amp;#39;incorrect&amp;#39; classes from the cardEle*/&lt;/span>
+&lt;span style="color:#75715e">// cardEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#75715e">// cardEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">questions&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+&lt;span style="color:#75715e">/* remove the hide class from the nextBtn*/&lt;/span>
+&lt;span style="color:#75715e">// nextBtn
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> }
+&lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;span style="color:#75715e">/* show the score*/&lt;/span>
+&lt;span style="color:#75715e">// = `Done! your score is ${score} / ${maxPoints}`
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> }
+}
+&lt;span style="color:#75715e">/* function called when clicking on next button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">goNext&lt;/span>() {
+&lt;span style="color:#75715e">/* hide the next button*/&lt;/span>
+&lt;span style="color:#a6e22e">nextBtn&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;hide&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* create a new question*/&lt;/span>
+&lt;span style="color:#a6e22e">createQuestion&lt;/span>();
+}
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">questions&lt;/span> &lt;span style="color:#f92672">=&lt;/span> [
+{
+&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;What is 2 + 2&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">choices&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#a6e22e">correct&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+},
+]
+},
+{
+&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;What is 2 x 2&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">choices&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#a6e22e">correct&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+},
+]
+},
+{
+&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;What is 2 - 2&amp;#34;&lt;/span>,
+&lt;span style="color:#a6e22e">choices&lt;/span>&lt;span style="color:#f92672">:&lt;/span> [
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#a6e22e">correct&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">6&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+},
+{
+&lt;span style="color:#a6e22e">choice&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#ae81ff">4&lt;/span>
+},
+]
+},
+]
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+The file contains two types of comments: the &lt;code>/* */&lt;/code> comment for the step to be done, and the &lt;code>//&lt;/code> for partially complete code for us to complete.
+For example, in line 3 &lt;code>/* start button*/&lt;/code> asking us to find a reference to the start button, while on line 4 &lt;code>// const startBtn =&lt;/code> we should uncomment it to complete the task.&lt;/p>
+&lt;h3 id="finding-the-html-elements-in-js">Finding the HTML elements in JS&lt;/h3>
+&lt;p>To find the different required elements, we can use any of the DOM query methods. The query is based on the attributes of those HTML elements like &lt;code>id, class&lt;/code>.
+For demonstration, we will use different DOM query methods.
+&lt;details>
+&lt;summary>
+Querying the DOM
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js"> &lt;span style="color:#75715e">/* find the elements */&lt;/span>
+&lt;span style="color:#75715e">/* start button*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">startBtn&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;start&amp;#34;&lt;/span>);
+&lt;span style="color:#75715e">/* the element that has the question-card class*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">cardEle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementsByClassName&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;question-card&amp;#34;&lt;/span>)[&lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;span style="color:#75715e">/* the question title*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">qTitleEle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">getElementById&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;question&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* the element with the id of answers*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">choicesEle&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelector&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;#answers&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* the next button*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">nextBtn&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelector&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;#next&amp;#34;&lt;/span>)
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">currentQuestion&lt;/span>, &lt;span style="color:#a6e22e">qIndex&lt;/span>, &lt;span style="color:#a6e22e">score&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#a6e22e">points&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>, &lt;span style="color:#a6e22e">maxPoints&lt;/span>;
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>&lt;/p>
+&lt;h3 id="implementing-the-start-function">Implementing the &lt;code>start&lt;/code> function&lt;/h3>
+&lt;p>When the user clicks on the start button, The question&amp;rsquo;s card should be shown and the start button should be hidden.
+&lt;details>
+&lt;summary>
+start() function
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">/* function called when clicking on the start button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">start&lt;/span>() {
+&lt;span style="color:#75715e">/* show the questions card cardEle*/&lt;/span>
+&lt;span style="color:#a6e22e">cardEle&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">remove&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;hide&amp;#39;&lt;/span>)
+&lt;span style="color:#75715e">/* hide the start button*/&lt;/span>
+&lt;span style="color:#a6e22e">startBtn&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;hide&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* set the maximum points a user can get for solving all the questions*/&lt;/span>
+&lt;span style="color:#a6e22e">maxPoints&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">points&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">questions&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;start function called&amp;#39;&lt;/span>);
+&lt;span style="color:#a6e22e">createQuestion&lt;/span>();
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+To hide an element we just add the &lt;code>hide&lt;/code> class to that element. This is done by calling the &lt;code>add&lt;/code> method on the &lt;code>classList&lt;/code> property of the element.&lt;/p>
+&lt;h3 id="implementing-createquestion-function">Implementing &lt;code>createQuestion&lt;/code> function&lt;/h3>
+&lt;details>
+&lt;summary>
+createQuestion function
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+&lt;/span>&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38">&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+&lt;/span>&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">createQuestion&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Creating question&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* randomly select a question from the questions array*/&lt;/span>
+&lt;span style="color:#75715e">/* qIndex is the index of the question in the array*/&lt;/span>
+&lt;span style="color:#a6e22e">qIndex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> Math.&lt;span style="color:#a6e22e">floor&lt;/span>(Math.&lt;span style="color:#a6e22e">random&lt;/span>() &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">questions&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span>)
+&lt;span style="color:#a6e22e">currentQuestion&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">questions&lt;/span>[&lt;span style="color:#a6e22e">qIndex&lt;/span>]
+&lt;span style="color:#a6e22e">qTitleEle&lt;/span>.&lt;span style="color:#a6e22e">innerText&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">currentQuestion&lt;/span>.&lt;span style="color:#a6e22e">text&lt;/span> &lt;span style="color:#75715e">/* fill the question title*/&lt;/span>
+&lt;span style="color:#75715e">/* remove the div that wraps all the answer buttons*/&lt;/span>
+&lt;span style="color:#75715e">// choicesEle
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">choicesEle&lt;/span>.&lt;span style="color:#a6e22e">removeChild&lt;/span>(&lt;span style="color:#a6e22e">choicesEle&lt;/span>.&lt;span style="color:#a6e22e">firstElementChild&lt;/span>);
+&lt;span style="color:#75715e">/* create a new div to wrap the choices*/&lt;/span>
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">wrapper&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">createElement&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;div&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* add all the choices to this wrapper*/&lt;/span>
+&lt;span style="display:block;width:100%;background-color:#3c3d38"> &lt;span style="color:#a6e22e">currentQuestion&lt;/span>.&lt;span style="color:#a6e22e">choices&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">choice&lt;/span> =&amp;gt; {
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> &lt;span style="color:#a6e22e">wrapper&lt;/span>.&lt;span style="color:#a6e22e">appendChild&lt;/span>(&lt;span style="color:#a6e22e">createChoice&lt;/span>(&lt;span style="color:#a6e22e">choice&lt;/span>))
+&lt;/span>&lt;span style="display:block;width:100%;background-color:#3c3d38"> });
+&lt;/span> &lt;span style="color:#75715e">/* add the wrapper to the choicesEle*/&lt;/span>
+&lt;span style="color:#a6e22e">choicesEle&lt;/span>.&lt;span style="color:#a6e22e">appendChild&lt;/span>(&lt;span style="color:#a6e22e">wrapper&lt;/span>);
+&lt;span style="color:#75715e">/* remove the selected question from the questions array so that it will not be shown again*/&lt;/span>
+&lt;span style="color:#a6e22e">questions&lt;/span>.&lt;span style="color:#a6e22e">splice&lt;/span>(&lt;span style="color:#a6e22e">qIndex&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>)
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;ol>
+&lt;li>The function starts by finding a random index of a question from the &lt;code>questions&lt;/code> array. &lt;code>Math.random&lt;/code>
+generates a random number in the range &lt;code>[0-1)&lt;/code>.
+To convert this number to the range &lt;code>[0~length-1]&lt;/code>, multiply it by the length of the array.&lt;/li>
+&lt;li>Then set the question title element (&lt;code>h1&lt;/code>) content to the text of the random question.&lt;/li>
+&lt;li>Then it removes the old questions choices by deleting the &lt;code>div&lt;/code> that wraps them. And recreate a wrapper &lt;code>div&lt;/code> to hold the new question choices.&lt;/li>
+&lt;li>Then it iterates over the new question choices to create a button for each choice and add it to the wrapper.
+The code now is broken because we didn&amp;rsquo;t implement the &lt;code>createChoce&lt;/code> function.&lt;/li>
+&lt;li>Then add the wrapper to the DOM to replace the old one.&lt;/li>
+&lt;li>Finally, to remove the randomly chosen question from the array, it uses &lt;code>splice(startIndex, count)&lt;/code> array function. This means each time this function is called, the array length is decremented.
+When it becomes empty the application should stop.&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementing-createchoice-function">Implementing &lt;code>createChoice&lt;/code> function&lt;/h3>
+&lt;details>
+&lt;summary>
+createChoice function
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js"> &lt;span style="color:#75715e">/* function to create a button for each choice*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">createChoice&lt;/span>(&lt;span style="color:#a6e22e">choice&lt;/span>) {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;creating choice&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">choice&lt;/span>);
+&lt;span style="color:#75715e">/* create a button element*/&lt;/span>
+&lt;span style="color:#66d9ef">let&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">createElement&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;button&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;btn&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">innerText&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">choice&lt;/span>.&lt;span style="color:#a6e22e">choice&lt;/span>;
+&lt;span style="color:#75715e">/* create a data-correct attribute for the correct answer button*/&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">choice&lt;/span>.&lt;span style="color:#a6e22e">correct&lt;/span>) {
+&lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">dataset&lt;/span>[&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+}
+&lt;span style="color:#75715e">/* add click event handler.*/&lt;/span>
+&lt;span style="color:#a6e22e">element&lt;/span>.&lt;span style="color:#a6e22e">addEventListener&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;click&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">answer&lt;/span>)
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">element&lt;/span>;
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;ol>
+&lt;li>The function creates a button and sets its content to the choice text value.&lt;/li>
+&lt;li>Then conditionally add the &lt;code>data-correct&lt;/code> attribute to the button if it is the correct answer.&lt;/li>
+&lt;li>Then it sets the click event handler to be the &lt;code>answer&lt;/code> function. And returns the button to &lt;code>createQuestion&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementing-the-answer-function">Implementing the &lt;code>answer&lt;/code> function&lt;/h3>
+&lt;details>
+&lt;summary>
+answer function
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">/* function to handle the click on an answer button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">answer&lt;/span>(&lt;span style="color:#a6e22e">event&lt;/span>) {
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">event&lt;/span>.&lt;span style="color:#a6e22e">target&lt;/span>
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;user choose &amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">src&lt;/span>);
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">src&lt;/span>.&lt;span style="color:#a6e22e">dataset&lt;/span>[&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>]) {
+&lt;span style="color:#75715e">/* add the &amp;#39;correct&amp;#39; CSS class to both the button and the cardEle*/&lt;/span>
+&lt;span style="color:#a6e22e">src&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">cardEle&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">/* update the user score*/&lt;/span>
+&lt;span style="color:#a6e22e">score&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#a6e22e">points&lt;/span>;
+} &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;span style="color:#75715e">/* add the &amp;#39;incorrect&amp;#39; css class to both the button and the cardEle*/&lt;/span>
+&lt;span style="color:#a6e22e">src&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;incorrect&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">cardEle&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;incorrect&amp;#34;&lt;/span>)
+}
+&lt;span style="color:#a6e22e">proceed&lt;/span>();
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;ol>
+&lt;li>The function finds which button did the user choose by finding the &lt;code>target&lt;/code> property of the event.&lt;/li>
+&lt;li>Then it either adds &lt;code>correct&lt;/code> or &lt;code>incorrect&lt;/code> class to both the button and the question card. If the event source contains &lt;code>data-correct&lt;/code> attribute, it means the user chooses the correct answer.&lt;/li>
+&lt;li>It also updates the user score by adding the points for a correct answer.&lt;/li>
+&lt;li>Then it calls &lt;code>proceed&lt;/code> function which calls &lt;code>disableChoices&lt;/code> to prevent the user from changing his answer and &lt;code>showNex&lt;/code> function to show the &lt;code>Next&lt;/code> button.&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementing-disablechoces-function">Implementing &lt;code>disableChoces&lt;/code> function&lt;/h3>
+&lt;details>
+&lt;summary>
+disableChoices
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">/* function to disable the choices buttons*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">disableChoices&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;disabling the choices&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* find all choices buttons*/&lt;/span>
+&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">choicesBtns&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">querySelectorAll&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;button:not(.hide)&amp;#34;&lt;/span>);
+&lt;span style="color:#a6e22e">choicesBtns&lt;/span>.&lt;span style="color:#a6e22e">forEach&lt;/span>(&lt;span style="color:#a6e22e">btn&lt;/span> =&amp;gt; {
+&lt;span style="color:#75715e">/* remove the click event handler so the button does nothing when clicked*/&lt;/span>
+&lt;span style="color:#a6e22e">btn&lt;/span>.&lt;span style="color:#a6e22e">removeEventListener&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;click&amp;#39;&lt;/span>, &lt;span style="color:#a6e22e">answer&lt;/span>);
+});
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;ol>
+&lt;li>The function finds all the buttons except the hidden ones (Start and Next)&lt;/li>
+&lt;li>Then it loops over these buttons to remove the click event handler. When the user clicks on any of the choices the &lt;code>answer&lt;/code> function is not called&lt;/li>
+&lt;/ol>
+&lt;h3 id="implementing-shownext-function">Implementing &lt;code>showNext&lt;/code> function&lt;/h3>
+&lt;details>
+&lt;summary>
+showNext Function
+&lt;/summary>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118
+&lt;/span>&lt;span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-js" data-lang="js">&lt;span style="color:#75715e">/* function to show the next button*/&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">showNext&lt;/span>() {
+&lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;Show next button&amp;#39;&lt;/span>);
+&lt;span style="color:#75715e">/* remove the &amp;#39;correct&amp;#39; and the &amp;#39;incorrect&amp;#39; classes from the cardEle*/&lt;/span>
+&lt;span style="color:#a6e22e">cardEle&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">remove&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;incorrect&amp;#34;&lt;/span>)
+&lt;span style="color:#a6e22e">cardEle&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">remove&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;correct&amp;#34;&lt;/span>)
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">questions&lt;/span>.&lt;span style="color:#a6e22e">length&lt;/span> &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) {
+&lt;span style="color:#75715e">/* remove the hide class from the nextBtn*/&lt;/span>
+&lt;span style="color:#a6e22e">nextBtn&lt;/span>.&lt;span style="color:#a6e22e">classList&lt;/span>.&lt;span style="color:#a6e22e">remove&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;hide&amp;#34;&lt;/span>);
+}
+&lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;span style="color:#75715e">/* show the score*/&lt;/span>
+document.&lt;span style="color:#a6e22e">getElementsByName&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;scoreMessage&amp;#34;&lt;/span>)[&lt;span style="color:#ae81ff">0&lt;/span>].&lt;span style="color:#a6e22e">innerText&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">`Done! your score is &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">score&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> / &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">maxPoints&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>
+}
+}
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;/details>
+&lt;ol>
+&lt;li>The function removes the animation of correct or incorrect answers&lt;/li>
+&lt;li>Then it checks if there are some questions left in the array. As we show in &lt;code>createQuestion&lt;/code> the function removes the randomly chosen question.&lt;/li>
+&lt;li>If there are some questions left, it shows the &lt;code>Next&lt;/code> button to enable the user to move to the next question.&lt;/li>
+&lt;li>If there are no questions left, it shows the score message.&lt;/li>
+&lt;/ol>
+&lt;h2 id="exercises">Exercises&lt;/h2>
+&lt;h3 id="suggested-changes-on-the-example">Suggested changes on the example&lt;/h3>
+&lt;ul>
+&lt;li>Randomize the answers&lt;/li>
+&lt;li>Add a timer for each question.&lt;/li>
+&lt;li>Create different types of questions: multiple answer, fill in the blank use regular expressions to check the user answer.&lt;/li>
+&lt;/ul></description></item></channel></rss>

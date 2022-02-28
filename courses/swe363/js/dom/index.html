@@ -1,0 +1,1177 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=generator content="Source Themes Academia 4.3.1">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=author content="Alaaddin Sabr">
+<meta name=description content="Manipulating the Document Object Model in JavaScript.">
+<link rel=alternate hreflang=en-us href=http://alasidig.github.io/swe-363.github.io/courses/swe363/js/dom/>
+<meta name=theme-color content="#4caf50">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.0/css/all.css integrity=sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin=anonymous>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css crossorigin=anonymous title=hl-light>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css crossorigin=anonymous title=hl-dark disabled>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+<link rel=stylesheet href=/swe-363.github.io/css/academia.min.18c56bf5da5ceccfdffec5d8793e1804.css>
+<link rel=manifest href=/swe-363.github.io/site.webmanifest>
+<link rel=icon type=image/png href=/swe-363.github.io/img/icon.png>
+<link rel=apple-touch-icon type=image/png href=/swe-363.github.io/img/icon-192.png>
+<link rel=canonical href=http://alasidig.github.io/swe-363.github.io/courses/swe363/js/dom/>
+<meta property="twitter:card" content="summary">
+<meta property="og:site_name" content="Alaaddin">
+<meta property="og:url" content="http://alasidig.github.io/swe-363.github.io/courses/swe363/js/dom/">
+<meta property="og:title" content="DOM Manipulation | Alaaddin">
+<meta property="og:description" content="Manipulating the Document Object Model in JavaScript."><meta property="og:image" content="http://alasidig.github.io/swe-363.github.io/img/icon-192.png">
+<meta property="twitter:image" content="http://alasidig.github.io/swe-363.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
+<meta property="article:published_time" content="2022-02-20T16:35:53+03:00">
+<meta property="article:modified_time" content="2022-02-20T16:35:53+03:00">
+<title>DOM Manipulation | Alaaddin</title>
+</head>
+<body id=top data-spy=scroll data-target=#TableOfContents data-offset=71>
+<aside class=search-results id=search>
+<div class=container>
+<section class=search-header>
+<div class="row no-gutters justify-content-between mb-3">
+<div class=col-6>
+<h1>Search</h1>
+</div>
+<div class="col-6 col-search-close">
+<a class=js-search href=#><i class="fas fa-times-circle text-muted" aria-hidden=true></i></a>
+</div>
+</div>
+<div id=search-box>
+</div>
+</section>
+<section class=section-search-results>
+<div id=search-hits>
+</div>
+</section>
+</div>
+</aside>
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id=navbar-main>
+<div class=container>
+<a class=navbar-brand href=/swe-363.github.io/>Alaaddin</a>
+<button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar aria-controls=navbar aria-expanded=false aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span>
+</button>
+<div class="collapse navbar-collapse" id=navbar>
+<ul class="navbar-nav ml-auto">
+<li class=nav-item>
+<a class="nav-link active" href=/swe-363.github.io/courses/><span>Courses</span></a>
+</li>
+<li class=nav-item>
+<a class="nav-link js-dark-toggle" href=#><i class="fas fa-moon" aria-hidden=true></i></a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container-fluid docs">
+<div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+<form class="docs-search d-flex align-items-center">
+<button class="btn docs-toggle d-md-none p-0 mr-3" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
+<span><i class="fas fa-bars"></i></span>
+</button>
+</form>
+<nav class="collapse docs-links" id=docs-nav>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/>Overview</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/html/basics/>HTML Basics</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/html/advanced/>HTML Advanced</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/css/css_basics/>CSS Basics</a>
+</div>
+<div class=docs-toc-item>
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/js/events/>JS Events</a>
+</div>
+<div class="docs-toc-item active">
+<a class=docs-toc-link href=/swe-363.github.io/courses/swe363/js/dom/>DOM Manipulation</a>
+</div>
+</nav>
+</div>
+<div class="d-none d-xl-block col-xl-2 docs-toc">
+<ul class="nav toc-top">
+<li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li>
+</ul>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#objectives>Objectives</a></li>
+<li><a href=#introduction>Introduction</a></li>
+<li><a href=#worked-example>Worked Example</a>
+<ul>
+<li><a href=#html-code>HTML Code</a></li>
+<li><a href=#css-style>CSS Style</a></li>
+<li><a href=#javascript-skeleton>JavaScript Skeleton</a></li>
+<li><a href=#finding-the-html-elements-in-js>Finding the HTML elements in JS</a></li>
+<li><a href=#implementing-the-start-function>Implementing the <code>start</code> function</a></li>
+<li><a href=#implementing-createquestion-function>Implementing <code>createQuestion</code> function</a></li>
+<li><a href=#implementing-createchoice-function>Implementing <code>createChoice</code> function</a></li>
+<li><a href=#implementing-the-answer-function>Implementing the <code>answer</code> function</a></li>
+<li><a href=#implementing-disablechoces-function>Implementing <code>disableChoces</code> function</a></li>
+<li><a href=#implementing-shownext-function>Implementing <code>showNext</code> function</a></li>
+</ul>
+</li>
+<li><a href=#exercises>Exercises</a>
+<ul>
+<li><a href=#suggested-changes-on-the-example>Suggested changes on the example</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
+<article class=article itemscope itemtype=http://schema.org/Article>
+<div class=docs-article-container>
+<h1 itemprop=name>DOM Manipulation</h1>
+<div class=article-style itemprop=articleBody>
+<h2 id=objectives>Objectives</h2>
+<p>Learn the basics of using JavaScript for modifying the HTML and CSS and responding to different events that may happen on a web page.</p>
+<h2 id=introduction>Introduction</h2>
+<p>JavaScript describes the HTML structure in a tree-like object called the Document Object Model. It provides many functions to: select element\s on the HTML, create new element\s, style elements, &mldr; etc.</p>
+<h2 id=worked-example>Worked Example</h2>
+<p>In this handout, we will use JavaScript to create a quiz-taking webapp. The final behavior looks as follows.
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/FzsKSFoMZ3M style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<ol>
+<li>The user clicks on the <code>Start</code> button to see the questions</li>
+<li>Show a random question.</li>
+<li>Change the background to reflect the correctness then disable the choices buttons.</li>
+<li>Show the <code>Next</code> button if there are more questions else show the score.</li>
+</ol>
+<h3 id=html-code>HTML Code</h3>
+<p><details>
+<summary>
+Quiz App HTML
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+&lt;<span style=color:#f92672>html</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+
+&lt;<span style=color:#f92672>head</span>&gt;
+    &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;viewport&#34;</span> <span style=color:#a6e22e>content</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+    &lt;<span style=color:#f92672>title</span>&gt;Exploring Dom&lt;/<span style=color:#f92672>title</span>&gt;
+<span style=display:block;width:100%;background-color:#3c3d38>    &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;style.css&#34;</span>&gt;
+</span>&lt;/<span style=color:#f92672>head</span>&gt;
+
+&lt;<span style=color:#f92672>body</span>&gt;
+    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;container&#34;</span>&gt;
+        &lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scoreMessage&#34;</span>&gt;&lt;/<span style=color:#f92672>h1</span>&gt;
+        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;question-card hide&#34;</span>&gt;
+<span style=display:block;width:100%;background-color:#3c3d38>            &lt;<span style=color:#f92672>h1</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;question&#34;</span>&gt;What is 5+2&lt;/<span style=color:#f92672>h1</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>            &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;answers&#34;</span>&gt;
+</span><span style=display:block;width:100%;background-color:#3c3d38>                &lt;<span style=color:#f92672>div</span>&gt;
+</span>                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn &#34;</span>&gt;10&lt;/<span style=color:#f92672>button</span>&gt;
+                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn&#34;</span>&gt;12&lt;/<span style=color:#f92672>button</span>&gt;
+<span style=display:block;width:100%;background-color:#3c3d38>                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>data-correct</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn&#34;</span>&gt;7&lt;/<span style=color:#f92672>button</span>&gt;
+</span>                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn&#34;</span>&gt;6&lt;/<span style=color:#f92672>button</span>&gt;
+                &lt;/<span style=color:#f92672>div</span>&gt;
+            &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;start&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;start()&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn&#34;</span>&gt;Start&lt;/<span style=color:#f92672>button</span>&gt;
+        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;next&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;btn hide&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;goNext()&#34;</span>&gt;Next&lt;/<span style=color:#f92672>button</span>&gt;
+    &lt;/<span style=color:#f92672>div</span>&gt;
+    &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;app.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+&lt;/<span style=color:#f92672>body</span>&gt;
+
+&lt;/<span style=color:#f92672>html</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+In line 15 the <code>&lt;h1></code> is used to display the question text. And the answers are wrapped in a <code>div</code> inside the one with id=answers.
+The <code>data-correct</code> attribute is added to the button that holds the correct answer.</p>
+<h3 id=css-style>CSS Style</h3>
+<p><details>
+<summary>
+Quiz App CSS rules
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#f92672>body</span>{
+    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>0</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>vh</span>;
+    <span style=color:#66d9ef>background</span>:rgb(<span style=color:#ae81ff>17</span>, <span style=color:#ae81ff>17</span>, <span style=color:#ae81ff>53</span>) linear-gradient(<span style=color:#66d9ef>to</span> <span style=color:#66d9ef>bottom</span> <span style=color:#66d9ef>right</span>,rgb(<span style=color:#ae81ff>17</span>, <span style=color:#ae81ff>17</span>, <span style=color:#ae81ff>53</span>),rgb(<span style=color:#ae81ff>67</span>, <span style=color:#ae81ff>189</span>, <span style=color:#ae81ff>67</span>));
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+    <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>center</span>;
+    <span style=color:#66d9ef>align-items</span>: <span style=color:#66d9ef>center</span>;
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>62.5</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>box-sizing</span>: <span style=color:#66d9ef>border-box</span>;
+}
+.<span style=color:#a6e22e>container</span>{
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>white</span>;
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+    <span style=color:#66d9ef>align-items</span>: <span style=color:#66d9ef>center</span>;
+    <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>center</span>;
+    <span style=color:#66d9ef>justify-items</span>: <span style=color:#66d9ef>center</span>;
+   
+}
+.<span style=color:#a6e22e>question-card</span>{
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+    <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span> <span style=color:#ae81ff>.5</span><span style=color:#66d9ef>rem</span> ;
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>margin-bottom</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+}
+<span style=display:block;width:100%;background-color:#3c3d38>.<span style=color:#a6e22e>hide</span>{
+</span>    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>none</span>;
+}
+
+.<span style=color:#a6e22e>btn</span>{
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>1</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>color</span>: <span style=color:#66d9ef>white</span>;
+    <span style=color:#66d9ef>border</span>: <span style=color:#66d9ef>transparent</span>;
+    <span style=color:#66d9ef>background-color</span>: rgb(<span style=color:#ae81ff>197</span>, <span style=color:#ae81ff>168</span>, <span style=color:#ae81ff>1</span>);
+    <span style=color:#66d9ef>padding</span>: <span style=color:#ae81ff>.5</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>.2</span><span style=color:#66d9ef>rem</span>;
+    <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
+}
+.<span style=color:#a6e22e>btn</span>:<span style=color:#a6e22e>hover</span>{
+    <span style=color:#66d9ef>transform</span>: scaleX(<span style=color:#ae81ff>1.2</span>);
+    <span style=color:#66d9ef>box-shadow</span>: <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>.5</span><span style=color:#66d9ef>rem</span> <span style=color:#ae81ff>.25</span><span style=color:#66d9ef>rem</span>;
+}
+<span style=color:#f92672>h1</span>{
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>2.5</span><span style=color:#66d9ef>rem</span>;
+}
+#answers <span style=color:#f92672>div</span>{
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>flex</span>;
+    <span style=color:#66d9ef>flex-direction</span>: <span style=color:#66d9ef>column</span>;
+    <span style=color:#66d9ef>justify-content</span>: <span style=color:#66d9ef>space-between</span>;
+
+}
+
+<span style=display:block;width:100%;background-color:#3c3d38>.<span style=color:#a6e22e>correct</span>{
+</span>    <span style=color:#66d9ef>background-color</span>: rgb(<span style=color:#ae81ff>27</span>, <span style=color:#ae81ff>133</span>, <span style=color:#ae81ff>141</span>);
+}
+<span style=display:block;width:100%;background-color:#3c3d38>.<span style=color:#a6e22e>incorrect</span>{
+</span>    <span style=color:#66d9ef>background-color</span>: rgb(<span style=color:#ae81ff>197</span>, <span style=color:#ae81ff>74</span>, <span style=color:#ae81ff>74</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+The class <code>.hide</code> is used to hide the elements. It will be added and removed using Javascript to hide the <code>next</code> button until the user chooses an answer.
+The classes <code>.correct and .incorrect</code> are used to reflect the correctness of the chosen answer.</p>
+<h3 id=javascript-skeleton>JavaScript Skeleton</h3>
+<p><details>
+<summary>
+The JavaScript Skeleton
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">104
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">111
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">112
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">113
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">114
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">115
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">116
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">117
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">118
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">119
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">120
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">121
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">122
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">123
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">124
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">125
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">126
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">127
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">128
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">129
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">130
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">131
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">132
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">133
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">134
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">135
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">136
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">137
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">138
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">139
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">140
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">141
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">142
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">143
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">144
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">145
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">146
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">147
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">148
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">149
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">150
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">151
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">152
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">153
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">154
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">155
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">156
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">157
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">158
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">159
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">160
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">161
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">162
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">163
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">164
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">165
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">166
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">167
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">168
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">169
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">170
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">171
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">172
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">173
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">174
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">175
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">176
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">177
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">178
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">179
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">180
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">181
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">182
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>/* find the elements  */</span>
+
+<span style=color:#75715e>/* start button*/</span>
+<span style=color:#75715e>// const startBtn =
+</span><span style=color:#75715e></span><span style=color:#75715e>/* the element that has the question-card class*/</span>
+<span style=color:#75715e>// const cardEle =
+</span><span style=color:#75715e></span>
+<span style=color:#75715e>/* the question title*/</span>
+<span style=color:#75715e>// const qTitleEle =
+</span><span style=color:#75715e></span><span style=color:#75715e>/* the element with the id of answers*/</span>
+<span style=color:#75715e>// const choicesEle =
+</span><span style=color:#75715e></span><span style=color:#75715e>/* the next button*/</span>
+<span style=color:#75715e>// const nextBtn =
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>currentQuestion</span>, <span style=color:#a6e22e>qIndex</span>, <span style=color:#a6e22e>score</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>points</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>maxPoints</span>;
+
+<span style=color:#75715e>/* function called when clicking on the start button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>start</span>() {
+    <span style=color:#75715e>/* show the questions card cardEle*/</span>
+
+    <span style=color:#75715e>/* hide the start button*/</span>
+
+    <span style=color:#75715e>/* set the maximum points a user can get for solving all the questions*/</span>
+    <span style=color:#75715e>// maxPoints =
+</span><span style=color:#75715e></span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;start function called&#39;</span>);
+    <span style=color:#a6e22e>createQuestion</span>();
+}
+
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createQuestion</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;Creating question&#39;</span>);
+    <span style=color:#75715e>/* randomly select a question from the questions array*/</span>
+    <span style=color:#75715e>/* qIndex is the index of the question in the array*/</span>
+    <span style=color:#75715e>// qIndex =
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// currentQuestion = questions[qIndex]
+</span><span style=color:#75715e></span>
+    <span style=color:#75715e>// qTitleEle  /* fill the question title */
+</span><span style=color:#75715e></span>
+    <span style=color:#75715e>/* remove the div that wraps all the answer buttons*/</span>
+    <span style=color:#75715e>// choicesEle 
+</span><span style=color:#75715e></span>
+    <span style=color:#75715e>/* create a new div to wrap the choices*/</span>
+    <span style=color:#75715e>// let wrapper =
+</span><span style=color:#75715e></span>    <span style=color:#75715e>/* add all the choices to this wrapper*/</span>
+    <span style=color:#75715e>// currentQuestion.choices.forEach(choice =&gt; {
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//     wrapper.appendChild(createChoice(choice))
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// });
+</span><span style=color:#75715e></span>    <span style=color:#75715e>/* add the wrapper to the choicesEle*/</span>
+    <span style=color:#75715e>// choicesEle
+</span><span style=color:#75715e></span>    <span style=color:#75715e>/* remove the selected question from the questions array so that it will not be shown again*/</span>
+    <span style=color:#75715e>// questions
+</span><span style=color:#75715e></span>}
+
+<span style=color:#75715e>/* function to create a button for each choice*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createChoice</span>(<span style=color:#a6e22e>choice</span>) {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;creating choice&#39;</span>, <span style=color:#a6e22e>choice</span>);
+    <span style=color:#75715e>/* create a button element*/</span>
+    <span style=color:#75715e>// let element =
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// element.classList.add(&#34;btn&#34;)
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// element.innerText = choice.choice;
+</span><span style=color:#75715e></span>    <span style=color:#75715e>/* create a data-correct attribute for the correct answer button*/</span>
+    <span style=color:#75715e>// if (choice.correct) {
+</span><span style=color:#75715e></span>    <span style=color:#75715e>//     element.dataset[&#34;correct&#34;] = true
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// }
+</span><span style=color:#75715e></span>    <span style=color:#75715e>/* add click event handler.*/</span>
+    <span style=color:#75715e>// element.addEventListener(&#39;click&#39;, answer)
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// return element;
+</span><span style=color:#75715e></span>}
+<span style=color:#75715e>/* function to handle the click on an answer button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>answer</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>src</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>srcElement</span>
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;user choose &#39;</span>, <span style=color:#a6e22e>src</span>);
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>src</span>.<span style=color:#a6e22e>dataset</span>[<span style=color:#e6db74>&#34;correct&#34;</span>]) {
+        <span style=color:#75715e>/* add the &#39;correct&#39; CSS class to both the button and the cardEle*/</span>
+        <span style=color:#75715e>// src
+</span><span style=color:#75715e></span>        <span style=color:#75715e>// cardEle
+</span><span style=color:#75715e></span>        <span style=color:#75715e>/* update the user score*/</span>
+        <span style=color:#75715e>// score
+</span><span style=color:#75715e></span>    } <span style=color:#66d9ef>else</span> {
+        <span style=color:#75715e>/* add the &#39;incorrect&#39; CSS class to both the button and the cardEle*/</span>
+
+        <span style=color:#75715e>// src
+</span><span style=color:#75715e></span>        <span style=color:#75715e>// cardEle
+</span><span style=color:#75715e></span>    }
+    <span style=color:#a6e22e>proceed</span>();
+}
+<span style=color:#75715e>/* function called after the click of an answer button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>proceed</span>() {
+    <span style=color:#75715e>/* disable the buttons so the user can&#39;t change his answer*/</span>
+    <span style=color:#a6e22e>disableChoices</span>();
+    <span style=color:#75715e>/* then show the next button to move to next question*/</span>
+    <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>showNext</span>, <span style=color:#ae81ff>1000</span>);
+}
+
+<span style=color:#75715e>/* function to disable the choices buttons*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>disableChoices</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;disabling the choices&#39;</span>);
+    <span style=color:#75715e>/* find all choices buttons*/</span>
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>choicesBtns</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#34;button:not(.hide)&#34;</span>);
+    <span style=color:#a6e22e>choicesBtns</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>btn</span> =&gt; {
+        <span style=color:#75715e>/* remove the click event handler so the button does nothing when clicked*/</span>
+        <span style=color:#75715e>// btn
+</span><span style=color:#75715e></span>    });
+}
+
+<span style=color:#75715e>/* function to show the next button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>showNext</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;Show next button&#39;</span>);
+    <span style=color:#75715e>/* remove the &#39;correct&#39; and the &#39;incorrect&#39; classes from the cardEle*/</span>
+    <span style=color:#75715e>// cardEle
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// cardEle
+</span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>questions</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+        <span style=color:#75715e>/* remove the hide class from the nextBtn*/</span>
+        <span style=color:#75715e>// nextBtn
+</span><span style=color:#75715e></span>    }
+    <span style=color:#66d9ef>else</span> {
+        <span style=color:#75715e>/* show the score*/</span>
+        <span style=color:#75715e>//  = `Done! your score is ${score} / ${maxPoints}`
+</span><span style=color:#75715e></span>    }
+}
+
+<span style=color:#75715e>/* function called when clicking on next button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>goNext</span>() {
+    <span style=color:#75715e>/* hide the next button*/</span>
+    <span style=color:#a6e22e>nextBtn</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;hide&#34;</span>)
+    <span style=color:#75715e>/* create a new question*/</span>
+    <span style=color:#a6e22e>createQuestion</span>();
+}
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>questions</span> <span style=color:#f92672>=</span> [
+    {
+        <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;What is 2 + 2&#34;</span>,
+        <span style=color:#a6e22e>choices</span><span style=color:#f92672>:</span> [
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>, <span style=color:#a6e22e>correct</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>
+            },
+
+        ]
+    },
+    {
+        <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;What is 2 x 2&#34;</span>,
+        <span style=color:#a6e22e>choices</span><span style=color:#f92672>:</span> [
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>, <span style=color:#a6e22e>correct</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>
+            },
+
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>6</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>
+            },
+
+        ]
+    },
+    {
+        <span style=color:#a6e22e>text</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;What is 2 - 2&#34;</span>,
+        <span style=color:#a6e22e>choices</span><span style=color:#f92672>:</span> [
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>correct</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>
+            },
+
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>6</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>3</span>
+            },
+            {
+                <span style=color:#a6e22e>choice</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>4</span>
+            },
+
+        ]
+    },
+]
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+The file contains two types of comments: the <code>/* */</code> comment for the step to be done, and the <code>//</code> for partially complete code for us to complete.
+For example, in line 3 <code>/* start button*/</code> asking us to find a reference to the start button, while on line 4 <code>// const startBtn =</code> we should uncomment it to complete the task.</p>
+<h3 id=finding-the-html-elements-in-js>Finding the HTML elements in JS</h3>
+<p>To find the different required elements, we can use any of the DOM query methods. The query is based on the attributes of those HTML elements like <code>id, class</code>.
+For demonstration, we will use different DOM query methods.
+<details>
+<summary>
+Querying the DOM
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js> <span style=color:#75715e>/* find the elements */</span>
+ 
+ <span style=color:#75715e>/* start button*/</span>
+ <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>startBtn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;start&#34;</span>);
+ <span style=color:#75715e>/* the element that has the question-card class*/</span>
+ <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>cardEle</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementsByClassName</span>(<span style=color:#e6db74>&#34;question-card&#34;</span>)[<span style=color:#ae81ff>0</span>]
+ 
+ <span style=color:#75715e>/* the question title*/</span>
+ <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>qTitleEle</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;question&#34;</span>)
+ <span style=color:#75715e>/* the element with the id of answers*/</span>
+ <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>choicesEle</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;#answers&#34;</span>)
+ <span style=color:#75715e>/* the next button*/</span>
+ <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>nextBtn</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;#next&#34;</span>)
+ 
+ <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>currentQuestion</span>, <span style=color:#a6e22e>qIndex</span>, <span style=color:#a6e22e>score</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>, <span style=color:#a6e22e>points</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>, <span style=color:#a6e22e>maxPoints</span>;
+
+</code></pre></td></tr></table>
+</div>
+</div>
+</details></p>
+<h3 id=implementing-the-start-function>Implementing the <code>start</code> function</h3>
+<p>When the user clicks on the start button, The question&rsquo;s card should be shown and the start button should be hidden.
+<details>
+<summary>
+start() function
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">26
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>/* function called when clicking on the start button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>start</span>() {
+    <span style=color:#75715e>/* show the questions card cardEle*/</span>
+    <span style=color:#a6e22e>cardEle</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;hide&#39;</span>)
+    <span style=color:#75715e>/* hide the start button*/</span>
+    <span style=color:#a6e22e>startBtn</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;hide&#34;</span>)
+    <span style=color:#75715e>/* set the maximum points a user can get for solving all the questions*/</span>
+    <span style=color:#a6e22e>maxPoints</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>points</span> <span style=color:#f92672>*</span> <span style=color:#a6e22e>questions</span>.<span style=color:#a6e22e>length</span>
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;start function called&#39;</span>);
+    <span style=color:#a6e22e>createQuestion</span>();
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+To hide an element we just add the <code>hide</code> class to that element. This is done by calling the <code>add</code> method on the <code>classList</code> property of the element.</p>
+<h3 id=implementing-createquestion-function>Implementing <code>createQuestion</code> function</h3>
+<details>
+<summary>
+createQuestion function
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">29
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">30
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span></span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createQuestion</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;Creating question&#39;</span>);
+    <span style=color:#75715e>/* randomly select a question from the questions array*/</span>
+    <span style=color:#75715e>/* qIndex is the index of the question in the array*/</span>
+    <span style=color:#a6e22e>qIndex</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> <span style=color:#a6e22e>questions</span>.<span style=color:#a6e22e>length</span>)
+    <span style=color:#a6e22e>currentQuestion</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>questions</span>[<span style=color:#a6e22e>qIndex</span>]
+
+    <span style=color:#a6e22e>qTitleEle</span>.<span style=color:#a6e22e>innerText</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentQuestion</span>.<span style=color:#a6e22e>text</span>  <span style=color:#75715e>/* fill the question title*/</span>
+
+    <span style=color:#75715e>/* remove the div that wraps all the answer buttons*/</span>
+    <span style=color:#75715e>// choicesEle 
+</span><span style=color:#75715e></span>    <span style=color:#a6e22e>choicesEle</span>.<span style=color:#a6e22e>removeChild</span>(<span style=color:#a6e22e>choicesEle</span>.<span style=color:#a6e22e>firstElementChild</span>);
+    <span style=color:#75715e>/* create a new div to wrap the choices*/</span>
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>wrapper</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;div&#34;</span>)
+    <span style=color:#75715e>/* add all the choices to this wrapper*/</span>
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>currentQuestion</span>.<span style=color:#a6e22e>choices</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>choice</span> =&gt; {
+</span><span style=display:block;width:100%;background-color:#3c3d38>        <span style=color:#a6e22e>wrapper</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>createChoice</span>(<span style=color:#a6e22e>choice</span>))
+</span><span style=display:block;width:100%;background-color:#3c3d38>    });
+</span>    <span style=color:#75715e>/* add the wrapper to the choicesEle*/</span>
+    <span style=color:#a6e22e>choicesEle</span>.<span style=color:#a6e22e>appendChild</span>(<span style=color:#a6e22e>wrapper</span>);
+    <span style=color:#75715e>/* remove the selected question from the questions array so that it will not be shown again*/</span>
+    <span style=color:#a6e22e>questions</span>.<span style=color:#a6e22e>splice</span>(<span style=color:#a6e22e>qIndex</span>, <span style=color:#ae81ff>1</span>)
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<ol>
+<li>The function starts by finding a random index of a question from the <code>questions</code> array. <code>Math.random</code>
+generates a random number in the range <code>[0-1)</code>.
+To convert this number to the range <code>[0~length-1]</code>, multiply it by the length of the array.</li>
+<li>Then set the question title element (<code>h1</code>) content to the text of the random question.</li>
+<li>Then it removes the old questions choices by deleting the <code>div</code> that wraps them. And recreate a wrapper <code>div</code> to hold the new question choices.</li>
+<li>Then it iterates over the new question choices to create a button for each choice and add it to the wrapper.
+The code now is broken because we didn&rsquo;t implement the <code>createChoce</code> function.</li>
+<li>Then add the wrapper to the DOM to replace the old one.</li>
+<li>Finally, to remove the randomly chosen question from the array, it uses <code>splice(startIndex, count)</code> array function. This means each time this function is called, the array length is decremented.
+When it becomes empty the application should stop.</li>
+</ol>
+<h3 id=implementing-createchoice-function>Implementing <code>createChoice</code> function</h3>
+<details>
+<summary>
+createChoice function
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">55
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">56
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">57
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">58
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">59
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">60
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">61
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">62
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">63
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">64
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">65
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">66
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">67
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js> <span style=color:#75715e>/* function to create a button for each choice*/</span>
+ <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>createChoice</span>(<span style=color:#a6e22e>choice</span>) {
+     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;creating choice&#39;</span>, <span style=color:#a6e22e>choice</span>);
+     <span style=color:#75715e>/* create a button element*/</span>
+     <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>element</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>createElement</span>(<span style=color:#e6db74>&#34;button&#34;</span>);
+     <span style=color:#a6e22e>element</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;btn&#34;</span>)
+     <span style=color:#a6e22e>element</span>.<span style=color:#a6e22e>innerText</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>choice</span>.<span style=color:#a6e22e>choice</span>;
+     <span style=color:#75715e>/* create a data-correct attribute for the correct answer button*/</span>
+     <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>choice</span>.<span style=color:#a6e22e>correct</span>) {
+         <span style=color:#a6e22e>element</span>.<span style=color:#a6e22e>dataset</span>[<span style=color:#e6db74>&#34;correct&#34;</span>] <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+     }
+     <span style=color:#75715e>/* add click event handler.*/</span>
+     <span style=color:#a6e22e>element</span>.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#39;click&#39;</span>, <span style=color:#a6e22e>answer</span>)
+     <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>element</span>;
+ }
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<ol>
+<li>The function creates a button and sets its content to the choice text value.</li>
+<li>Then conditionally add the <code>data-correct</code> attribute to the button if it is the correct answer.</li>
+<li>Then it sets the click event handler to be the <code>answer</code> function. And returns the button to <code>createQuestion</code></li>
+</ol>
+<h3 id=implementing-the-answer-function>Implementing the <code>answer</code> function</h3>
+<details>
+<summary>
+answer function
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">72
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">73
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">74
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">75
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">76
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">77
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">78
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">79
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">80
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">81
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">82
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">83
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">84
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">85
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">86
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>/* function to handle the click on an answer button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>answer</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>src</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;user choose &#39;</span>, <span style=color:#a6e22e>src</span>);
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>src</span>.<span style=color:#a6e22e>dataset</span>[<span style=color:#e6db74>&#34;correct&#34;</span>]) {
+        <span style=color:#75715e>/* add the &#39;correct&#39; CSS class to both the button and the cardEle*/</span>
+        <span style=color:#a6e22e>src</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;correct&#34;</span>)
+        <span style=color:#a6e22e>cardEle</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;correct&#34;</span>)
+        <span style=color:#75715e>/* update the user score*/</span>
+        <span style=color:#a6e22e>score</span> <span style=color:#f92672>+=</span> <span style=color:#a6e22e>points</span>;
+    } <span style=color:#66d9ef>else</span> {
+        <span style=color:#75715e>/* add the &#39;incorrect&#39; css class to both the button and the cardEle*/</span>
+
+        <span style=color:#a6e22e>src</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;incorrect&#34;</span>)
+        <span style=color:#a6e22e>cardEle</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#34;incorrect&#34;</span>)
+    }
+    <span style=color:#a6e22e>proceed</span>();
+}
+
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<ol>
+<li>The function finds which button did the user choose by finding the <code>target</code> property of the event.</li>
+<li>Then it either adds <code>correct</code> or <code>incorrect</code> class to both the button and the question card. If the event source contains <code>data-correct</code> attribute, it means the user chooses the correct answer.</li>
+<li>It also updates the user score by adding the points for a correct answer.</li>
+<li>Then it calls <code>proceed</code> function which calls <code>disableChoices</code> to prevent the user from changing his answer and <code>showNex</code> function to show the <code>Next</code> button.</li>
+</ol>
+<h3 id=implementing-disablechoces-function>Implementing <code>disableChoces</code> function</h3>
+<details>
+<summary>
+disableChoices
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>/* function to disable the choices buttons*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>disableChoices</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;disabling the choices&#39;</span>);
+    <span style=color:#75715e>/* find all choices buttons*/</span>
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>choicesBtns</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#34;button:not(.hide)&#34;</span>);
+    <span style=color:#a6e22e>choicesBtns</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>btn</span> =&gt; {
+        <span style=color:#75715e>/* remove the click event handler so the button does nothing when clicked*/</span>
+        <span style=color:#a6e22e>btn</span>.<span style=color:#a6e22e>removeEventListener</span>(<span style=color:#e6db74>&#39;click&#39;</span>, <span style=color:#a6e22e>answer</span>);
+    });
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<ol>
+<li>The function finds all the buttons except the hidden ones (Start and Next)</li>
+<li>Then it loops over these buttons to remove the click event handler. When the user clicks on any of the choices the <code>answer</code> function is not called</li>
+</ol>
+<h3 id=implementing-shownext-function>Implementing <code>showNext</code> function</h3>
+<details>
+<summary>
+showNext Function
+</summary>
+<div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
+<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">111
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">112
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">113
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">114
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">115
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">116
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">117
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">118
+</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">119
+</span></code></pre></td>
+<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
+<pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#75715e>/* function to show the next button*/</span>
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>showNext</span>() {
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;Show next button&#39;</span>);
+    <span style=color:#75715e>/* remove the &#39;correct&#39; and the &#39;incorrect&#39; classes from the cardEle*/</span>
+    <span style=color:#a6e22e>cardEle</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#34;incorrect&#34;</span>)
+    <span style=color:#a6e22e>cardEle</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#34;correct&#34;</span>)
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>questions</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+        <span style=color:#75715e>/* remove the hide class from the nextBtn*/</span>
+        <span style=color:#a6e22e>nextBtn</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#34;hide&#34;</span>);
+    }
+    <span style=color:#66d9ef>else</span> {
+        <span style=color:#75715e>/* show the score*/</span>
+        document.<span style=color:#a6e22e>getElementsByName</span>(<span style=color:#e6db74>&#34;scoreMessage&#34;</span>)[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>innerText</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`Done! your score is </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>score</span><span style=color:#e6db74>}</span><span style=color:#e6db74> / </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>maxPoints</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+</details>
+<ol>
+<li>The function removes the animation of correct or incorrect answers</li>
+<li>Then it checks if there are some questions left in the array. As we show in <code>createQuestion</code> the function removes the randomly chosen question.</li>
+<li>If there are some questions left, it shows the <code>Next</code> button to enable the user to move to the next question.</li>
+<li>If there are no questions left, it shows the score message.</li>
+</ol>
+<h2 id=exercises>Exercises</h2>
+<h3 id=suggested-changes-on-the-example>Suggested changes on the example</h3>
+<ul>
+<li>Randomize the answers</li>
+<li>Add a timer for each question.</li>
+<li>Create different types of questions: multiple answer, fill in the blank use regular expressions to check the user answer.</li>
+</ul>
+</div>
+<div class=article-tags>
+<a class="badge badge-light" href=/swe-363.github.io/tags/js/>JS</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/js-dom/>JS DOM</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/js-events/>JS Events</a>
+<a class="badge badge-light" href=/swe-363.github.io/tags/front-end/>front-end</a>
+</div>
+<div class=article-widget>
+<div class=post-nav>
+<div class=post-nav-item>
+<div class=meta-nav>Previous</div>
+<a href=/swe-363.github.io/courses/swe363/js/events/ rel=next>JS Events</a>
+</div>
+</div>
+</div>
+</div>
+<div class=body-footer>
+Last updated on Sun, Feb 20, 2022
+</div>
+</article>
+<footer class=site-footer>
+<div class=container>
+<div class="row align-items-center">
+<div class="col-md-6 mb-4 mb-md-0">
+<p class=mb-0>
+Copyright © 2022 &#183;
+Powered by
+<a href=https://gethugothemes.com target=_blank rel=noopener>Gethugothemes</a>
+</p>
+</div>
+<div class=col-md-6>
+<ul class="list-inline network-icon text-right mb-0">
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin=anonymous></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin=anonymous></script>
+<script>anchors.add()</script>
+<script src=/swe-363.github.io/js/academia.min.e40e230d9b3dfeac86994156b6388764.js></script>
+<div id=modal class="modal fade" role=dialog>
+<div class=modal-dialog>
+<div class=modal-content>
+<div class=modal-header>
+<h5 class=modal-title>Cite</h5>
+<button type=button class=close data-dismiss=modal aria-label=Close>
+<span aria-hidden=true>&#215;</span>
+</button>
+</div>
+<div class=modal-body>
+<pre><code class="tex hljs"></code></pre>
+</div>
+<div class=modal-footer>
+<a class="btn btn-outline-primary my-1 js-copy-cite" href=# target=_blank>
+<i class="fas fa-copy"></i> Copy
+</a>
+<a class="btn btn-outline-primary my-1 js-download-cite" href=# target=_blank>
+<i class="fas fa-download"></i> Download
+</a>
+<div id=modal-error></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
