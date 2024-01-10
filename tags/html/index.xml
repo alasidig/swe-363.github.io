@@ -21,16 +21,16 @@ These are some semantic structure elements. If you are viewing this page on lapt
 Expand
 &lt;/summary>
 &lt;p>This simple web page has some issues which are preventing the content from being displayed correctly. Identify and fix the issues. This practice is also called &amp;ldquo;debugging&amp;rdquo; your code.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
-&amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;This sentence should be on its own So should this one.&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">p.&lt;/span> &lt;span style="color:#a6e22e">Whats&lt;/span> &lt;span style="color:#a6e22e">wrong&lt;/span> &lt;span style="color:#a6e22e">with&lt;/span> &lt;span style="color:#a6e22e">this&lt;/span> &lt;span style="color:#a6e22e">sentence&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">?&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">p&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">p&lt;/span>&amp;gt;This sentence should be on its own So should this one.&amp;lt;/&lt;span style="color:#f92672">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">p.&lt;/span> &lt;span style="color:#a6e22e">Whats&lt;/span> &lt;span style="color:#a6e22e">wrong&lt;/span> &lt;span style="color:#a6e22e">with&lt;/span> &lt;span style="color:#a6e22e">this&lt;/span> &lt;span style="color:#a6e22e">sentence&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">?&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;h3 id="create-a-webpage">Create a webpage&lt;/h3>
 &lt;details>
@@ -66,7 +66,7 @@ Makes 2 kid-size smoothies or 1 large You Will Need 1 banana 1/2 orange, peeled 
 Top with yogurt and water (or milk).
 Turn blender on and blend until creamy and smooth.
 Taste, and then adjust with honey if needed.
-Adam and Joanne's Tips How to Freeze or Make Ahead: This recipe makes one smoothie or two kid-size smoothies.
+Adam and Joanne&amp;#39;s Tips How to Freeze or Make Ahead: This recipe makes one smoothie or two kid-size smoothies.
 Enjoy now, or save for later. To save the smoothie for later, pour each serving into a food-safe resealable plastic bag or container and freeze. Then, about an hour before needing the smoothie, take it out from the freezer.
 Non-Dairy alternatives: If you are looking for a banana smoothie without yogurt, then simply leave the yogurt out of the recipe above and replace it with more banana, a tablespoon or so of nut butter, mango, or a tablespoon of hemp seeds (great protein source). You may need to add additional water or non-dairy milk to thin the smoothie out a little.
 Nutrition facts: The nutrition facts provided below are estimates.
@@ -98,8 +98,8 @@ Forms usually include a series of HTML &lt;code>&amp;lt;input&amp;gt;&lt;/code> 
 &lt;/div>&lt;br>
 The form starts from line 10 where we added the &lt;code>&amp;lt;form&amp;gt;&lt;/code> tag. Then followed by an &lt;code>&amp;lt;input&amp;gt;&lt;/code> tag for the user name, then another one for the phone, and finally a &lt;code>&amp;lt;textarea&amp;gt;&lt;/code> to hold the message. The &lt;code>&amp;lt;ul&amp;gt;&lt;/code> and &lt;code>&amp;lt;li&amp;gt;&lt;/code> tags are used to format the fields to show in a vertical column because the &lt;code>&amp;lt;input&amp;gt;&lt;/code> and &lt;code>&amp;lt;textarea&amp;gt;&lt;/code> are &lt;code>inline&lt;/code> elements. Click on the green button to see the output.&lt;/p>
 &lt;h3 id="the-input-field">The &lt;code>&amp;lt;input&amp;gt;&lt;/code> field&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html"> &amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Enter your name&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">required&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">input&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">placeholder&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Enter your name&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">required&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>It is a self closing tag&lt;/li>
 &lt;li>The &lt;code>type&lt;/code> attribute can have many values like number, email, password, &amp;hellip;etc. It is helpful for simple validation and will render a sutable keyboard on the smartphones.&lt;/li>
 &lt;li>The &lt;code>placeholder&lt;/code> attribute is used to display a helping string to the the user what should he input in this field.&lt;/li>
@@ -114,8 +114,8 @@ The form starts from line 10 where we added the &lt;code>&amp;lt;form&amp;gt;&lt
 &lt;li>There are some other attributes not added here such as &lt;code>rows&lt;/code>, &lt;code>cols&lt;/code>,&amp;hellip;&lt;/li>
 &lt;/ul>
 &lt;h3 id="the-form-tag">The &lt;code>&amp;lt;form&amp;gt;&lt;/code> tag&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">form&lt;/span> &lt;span style="color:#a6e22e">action&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;result.html&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;get&amp;#34;&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">form&lt;/span> &lt;span style="color:#a6e22e">action&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;result.html&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;get&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>It wraps the input fields.&lt;/li>
 &lt;li>The &lt;code>action&lt;/code> attribute tels where to submit the form. It accept the URL of the server that will process the form data. Since we are only discussing the frontend now, the server side script will not be discussed.&lt;/li>
 &lt;li>There are many other attributes not added here such as &lt;code>onsubmit&lt;/code>, &lt;code>enctype&lt;/code>, &amp;hellip;&lt;/li>

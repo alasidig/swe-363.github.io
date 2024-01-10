@@ -14,23 +14,23 @@ Still, we can&amp;rsquo;t see anything on the browser because these divs by defa
 &lt;summary>
 Index.html
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">
-&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#a6e22e">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;style2.css&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;Smile Please&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;Hover Over Me to Smile!!&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;smiley&amp;#34;&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;eyes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;leftEye&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;eyes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;rightEye&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&lt;span style="color:#75715e">&amp;lt;!-- for entertainment add cheeks --&amp;gt;&lt;/span>
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;cheeks&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;cheeks&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;mouth&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
-&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">link&lt;/span> &lt;span style="color:#a6e22e">rel&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;style2.css&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;Smile Please&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;Hover Over Me to Smile!!&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;smiley&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;eyes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;leftEye&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;eyes&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;rightEye&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- for entertainment add cheeks --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;cheeks&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;cheeks&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;mouth&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;h3 id="css-styling">CSS Styling&lt;/h3>
 &lt;p>Now let&amp;rsquo;s start the styling. We would like firstly to style the smiley class. Firstly, to show it on the screen, we need to give it &lt;code>height&lt;/code> and &lt;code>width&lt;/code> since we don&amp;rsquo;t have any content in this div. By default, it&amp;rsquo;s going to take the full widht of the screen because it is a block element. Then, change the &lt;code>background-color&lt;/code> to gold.&lt;/p>
@@ -39,13 +39,14 @@ Index.html
 &lt;summary>
 smiley class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 We would like to give it some space around it and move it away from the edge.
 To do that, we can use the &lt;code>margin&lt;/code> property.
@@ -54,32 +55,34 @@ The &lt;code>margin&lt;/code> is the space around the element outside the &lt;co
 &lt;summary>
 smiley class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
-&lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
-&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 We can also, add a &lt;code>border&lt;/code> around the face. For the &lt;code>border&lt;/code> property, you choose the color, style, and thickness. So let&amp;rsquo;s add a &lt;code>black&lt;/code> &lt;code>solid&lt;/code> &lt;code>2px&lt;/code> thick border. but we are not limited to these named colors. Hovering over the word &lt;code>‘black’&lt;/code> in VSCode will popup the color chooser utility to select any color. The color can be represented as a blend of red, green, and blue with different ratios.
 &lt;details>
 &lt;summary>
 smiley class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
-&lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
-&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-&lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
-&lt;span style="color:#66d9ef">border&lt;/span>: &lt;span style="color:#66d9ef">black&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border&lt;/span>: &lt;span style="color:#66d9ef">black&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;img src="../color_chooser.jpg" alt="vscode color chooser">
 So we gave it now a border, but the face doesn&amp;rsquo;t look square right? So to change that we can use the &lt;code>border-radius&lt;/code>. The &lt;code>border-radius&lt;/code> specifies how rounded the corner should be. we would like the face to be completely round. This means the border-radius should be at least half of the width &lt;code>100px&lt;/code>. we can use relative units (&lt;code>50%&lt;/code>) and let CSS handle the calculation&lt;/p>
@@ -87,19 +90,20 @@ So we gave it now a border, but the face doesn&amp;rsquo;t look square right? So
 &lt;summary>
 smiley class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
-&lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
-&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-&lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
-&lt;span style="color:#66d9ef">border&lt;/span>: rgb(&lt;span style="color:#ae81ff">45&lt;/span>, &lt;span style="color:#ae81ff">45&lt;/span>, &lt;span style="color:#ae81ff">45&lt;/span>) &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* but the face shouldn&amp;#39;t be a square */&lt;/span>
-&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border&lt;/span>: rgb(&lt;span style="color:#ae81ff">45&lt;/span>, &lt;span style="color:#ae81ff">45&lt;/span>, &lt;span style="color:#ae81ff">45&lt;/span>) &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* but the face shouldn&amp;#39;t be a square */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;h4 id="styling-the-mouth">Styling the mouth&lt;/h4>
 &lt;p>So inside the 😀 we are having eyes and a mouth. The mouth needs size and background color to show up. Let us add &lt;code>height&lt;/code> and &lt;code>width&lt;/code> and a black 10px thick &lt;code>border&lt;/code>.
@@ -107,12 +111,12 @@ smiley class CSS rules
 &lt;summary>
 mouth class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">mouth&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">75&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">border-bottom&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">mouth&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">75&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-bottom&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;h3 id="face-layout">Face Layout&lt;/h3>
 &lt;p>OK, but this is not where the mouth should be. To move it to the right location, we can think of the face as a 5x5 &lt;code>grid&lt;/code>. The mouth should be in the forth row and spanning three columns as in this figure:
@@ -122,35 +126,38 @@ The line marks the starting of the column or a row. to do that we can change the
 &lt;summary>
 smiley class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
-&lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
-&lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-&lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
-&lt;span style="color:#66d9ef">border&lt;/span>: &lt;span style="color:#66d9ef">black&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">grid&lt;/span>;
-&lt;span style="color:#66d9ef">grid-template-columns&lt;/span>: &lt;span style="color:#a6e22e">repeat&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>fr);
-&lt;span style="color:#66d9ef">grid-template-rows&lt;/span>: &lt;span style="color:#a6e22e">repeat&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">40&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>);
-place-items: &lt;span style="color:#66d9ef">center&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">200&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us give it some background-color: ; */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#66d9ef">gold&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us move it away from the edges */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">margin&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* let us add border to the face. now let us use a different way to add colors border*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border&lt;/span>: &lt;span style="color:#66d9ef">black&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">display&lt;/span>: &lt;span style="color:#66d9ef">grid&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-template-columns&lt;/span>: &lt;span style="color:#a6e22e">repeat&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>fr);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-template-rows&lt;/span>: &lt;span style="color:#a6e22e">repeat&lt;/span>(&lt;span style="color:#ae81ff">5&lt;/span>,&lt;span style="color:#ae81ff">40&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> place-items: &lt;span style="color:#66d9ef">center&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;p>Whit that done, now we can style the mouth and move it to the correct place.
 &lt;details>
 &lt;summary>
 mouth class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">mouth&lt;/span>{
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">75&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">border-bottom&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>;
-&lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">mouth&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">75&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-bottom&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span> &lt;span style="color:#66d9ef">solid&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;h4 id="styling-the-eyes">Styling the eyes&lt;/h4>
 &lt;p>Similarly, we can style the eyes. Since the two eyes share common style, we can add the common CSS properties to the &lt;code>eyes&lt;/code> class and use the ids for the distinct styles
@@ -158,28 +165,28 @@ mouth class CSS rules
 &lt;summary>
 eyes class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">eyes&lt;/span>{
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span>;
-&lt;span style="color:#75715e">/* make them oval */&lt;/span>
-&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">eyes&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background-color&lt;/span>: &lt;span style="color:#ae81ff">#2d2d2d&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* make them oval */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;details>
 &lt;summary>
 Right and left eye CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">#leftEye{
-&lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
-&lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
-}
-#rightEye{
-&lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>;
-&lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>#leftEye{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#rightEye{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">4&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;h4 id="adding-the-cheeks">Adding the cheeks&lt;/h4>
 &lt;p>The cheeks style is similar ot the eyes. The differences are the color and the position. For the color, instead of a single solid color, a fancy gradient color is used.
@@ -187,25 +194,25 @@ Right and left eye CSS rules
 &lt;summary>
 cheeks class CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">cheeks&lt;/span>{
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">background&lt;/span>:radial-gradient(&lt;span style="color:#66d9ef">circle&lt;/span>,&lt;span style="color:#66d9ef">red&lt;/span>,&lt;span style="color:#66d9ef">pink&lt;/span>);
-&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-&lt;span style="color:#66d9ef">opacity&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-&lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">3&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">cheeks&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">background&lt;/span>:radial-gradient(&lt;span style="color:#66d9ef">circle&lt;/span>,&lt;span style="color:#66d9ef">red&lt;/span>,&lt;span style="color:#66d9ef">pink&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">opacity&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-row&lt;/span>: &lt;span style="color:#ae81ff">3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 To move the right cheek to the right, we can select it using the pseudo class &lt;code>nth-of-type&lt;/code>
 &lt;details>
 &lt;summary>
 Right cheek CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#f92672">div&lt;/span>.&lt;span style="color:#a6e22e">cheeks&lt;/span>:&lt;span style="color:#a6e22e">nth-of-type&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#f92672">2n&lt;/span>&lt;span style="color:#f92672">)&lt;/span>{
-&lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">5&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">div&lt;/span>.&lt;span style="color:#a6e22e">cheeks&lt;/span>:&lt;span style="color:#a6e22e">nth-of-type&lt;/span>&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#f92672">2n&lt;/span>&lt;span style="color:#f92672">)&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">grid-column&lt;/span>: &lt;span style="color:#ae81ff">5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;h3 id="animation">Animation&lt;/h3>
 &lt;p>Let us now finally smile 😊. For this we use &lt;code>hover&lt;/code> pseudo class. For the eyes, we would like to change their &lt;code>width&lt;/code> and &lt;code>height&lt;/code>.&lt;/p>
@@ -213,44 +220,44 @@ Right cheek CSS rules
 &lt;summary>
 Smiling eyes CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">eyes&lt;/span>{
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">eyes&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">45&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">25&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 For the mouth, we would like to change the &lt;code>width&lt;/code>, &lt;code>height&lt;/code>, and &lt;code>border-radius&lt;/code>.&lt;/p>
 &lt;details>
 &lt;summary>
 Smiling mouth CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">&lt;span style="color:#75715e">/* the mouth should expand and become rounded*/&lt;/span>
-.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">mouth&lt;/span>{
-&lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
-&lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/* the mouth should expand and become rounded*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">mouth&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width&lt;/span>: &lt;span style="color:#ae81ff">100&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">px&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">border-radius&lt;/span>: &lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;p>The cheeks should be hidden and only be shown on hover. This can be done using the &lt;code>opacity&lt;/code>. In the &lt;code>.cheeks&lt;/code> class change the &lt;code>css opacity: 35%; &lt;/code> to &lt;code>css opacity: 0; &lt;/code> to hide the cheeks.&lt;/p>
 &lt;details>
 &lt;summary>
 Smiling cheeks CSS rules
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">cheeks&lt;/span>{
-&lt;span style="color:#66d9ef">opacity&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span>:&lt;span style="color:#a6e22e">hover&lt;/span> .&lt;span style="color:#a6e22e">cheeks&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">opacity&lt;/span>: &lt;span style="color:#ae81ff">35&lt;/span>&lt;span style="color:#66d9ef">%&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>
 &lt;p>Finally to have a smooth transition we can set the duration of state-change to 1 second. To do that, use the &lt;code>transition&lt;/code> property. This should be added to eyes, cheeks, and mouth. Instead of repeating the same rule in different places, we can use the &lt;code>*&lt;/code> selector to select all the children of &lt;code>.smiley&lt;/code> div.&lt;br>
 &lt;details>
 &lt;summary>
 Smooth animation
 &lt;/summary>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-css" data-lang="css">.&lt;span style="color:#a6e22e">smiley&lt;/span> &lt;span style="color:#f92672">&amp;gt;*&lt;/span>{
-&lt;span style="color:#66d9ef">transition&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">s&lt;/span> ;
-}
-&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-css" data-lang="css">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">smiley&lt;/span> &lt;span style="color:#f92672">&amp;gt;*&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">transition&lt;/span>: &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#66d9ef">s&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/details>&lt;/p>
 &lt;h2 id="exercises">Exercises&lt;/h2>
 &lt;h3 id="suggested-changes-on-the-example">Suggested changes on the example&lt;/h3>
