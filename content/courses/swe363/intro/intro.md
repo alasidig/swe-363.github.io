@@ -35,9 +35,10 @@ Now, meet the key players behind the scenes:
 - **Web servers:** These tireless workhorses store and deliver website content upon request. Imagine them as libraries housing millions of books, ready to be dispatched to eager readers.
 - **Web browsers:** These are your windows to the web, interpreting and displaying the information delivered by web servers. It's like your personal reading device, transforming bytes into beautiful, interactive experiences.
 - **Hyperlinks:** These are the web's magic connectors, weaving pages together. They're the clickable pathways that let you navigate from one corner of the web to another, seamlessly and with a single click.
-  | Browser | Server |
-  |----------|----------|
-  | ![Browser translate the code](../browser.webp) _The browser translate the code of a webpage_| ![server](../hosting.gif) _The server store/run the code_ |
+
+  | Browser                                                                                      | Server                                                    |
+  | -------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+  | ![Browser translate the code](../browser.webp) _The browser translate the code of a webpage_ | ![server](../hosting.gif) _The server store/run the code_ |
 
 ## How the Internet Makes the Web Dance
 
@@ -65,9 +66,84 @@ The best path is selected by a routing protocol based on the value or metric it 
 In data networking, telecommunications, and computer buses, an acknowledgment (ACK) is a signal that is passed between communicating processes, computers, or devices to signify acknowledgment, or receipt of message, as part of a communications protocol.
 {{< /detailsumary >}}
 
+#### 💻 Practice Zone
+
+- [Use this website for DNS lookup https://mxtoolbox.com/DNSLookup.aspx](https://mxtoolbox.com/DNSLookup.aspx)
+- Run the following commands from the command prompt:
+
+```shell {linenos=table,linenostart=1}
+ipconfig # to find the ip address of the machine
+nslookup google.com # to do DNS query to get the IP of the domain
+```
+
+### Behind the Scenes: The Journey of a Web Page
+
+**Let's follow the path of a web page from the moment you type a URL to the instant it appears on your screen. It's a fascinating journey involving multiple actors and a precise choreography of steps.**
+
+**1. User Initiates the Journey:**
+
+- You enter a URL (like "[www.example.com](https://www.example.com)") into the browser's address bar.
+
+**2. DNS Lookup: Finding the Address:**
+
+- The browser contacts a DNS (Domain Name System) server, the internet's phonebook, to translate the human-readable URL into a numerical IP address that computers understand.
+
+**3. Browser Sends a Request:**
+
+- The browser crafts a well-formatted HTTP request message, containing the URL, browser information, and other relevant details. It sends this message across the internet, aiming for the server at the specified IP address.
+
+**4. Server Receives and Responds:**
+
+- The web server, constantly listening for incoming requests, receives the message. It locates the requested web page files on its storage and packages them into a response message.
+
+**5. Packet Delivery: The Journey Home:**
+
+- The server sends the response message back to the browser, broken down into smaller packets of data. These packets travel through various routers and networks, finding the optimal path to reach the user's device.
+
+**6. Browser Reassembles and Renders:**
+
+- The browser receives the packets, reassembles them into the complete web page, and begins rendering it on the screen. This involves interpreting HTML, CSS, and JavaScript code to create the visual layout and interactive elements.
+
+**7. Fetching Additional Resources:**
+
+- The browser doesn't stop there! It also fetches any linked CSS stylesheets to apply styling and visual formatting to the page content.
+- It also fetches JavaScript files, which add dynamic behavior and interactive features to the page, enhancing user experience.
+
+**8. Page Fully Displayed:**
+
+- Once all resources are received and rendered, the web page appears in its full glory, ready for user interaction. This entire process usually happens within a few seconds, making the web feel seamless and responsive.
+
+#### 💻 Practice Zone
+
+Use the browser inspector and navigate to the networking tap to view network requests.
+
+### Under the Hood: Protocols Powering the Web
+
+While we've explored the user-facing journey of accessing a web page, a complex network of protocols operates behind the scenes, ensuring smooth communication and data exchange. Let's peek into some of the most important protocols for web development:
+
+**1. HTTP (Hypertext Transfer Protocol):** The very language of the web! HTTP governs communication between browsers and servers. It dictates how requests are formatted, how responses are sent, and the overall flow of information. Every click, every image download, every interaction on a website relies on HTTP.
+
+**2. HTTPS (Hypertext Transfer Protocol Secure):** Adding a layer of security to HTTP, HTTPS encrypts communication between browsers and servers using SSL/TLS protocols. This protects sensitive information like login credentials and financial data from eavesdropping and manipulation. In today's online world, using HTTPS is essential for building trust and ensuring user privacy.
+
+**3. TCP/IP (Transmission Control Protocol/Internet Protocol):** These two protocols form the backbone of internet communication. TCP ensures reliable data delivery by breaking down information into packets, sequencing them, and requesting retransmission if any are lost. IP, on the other hand, routes these packets through the internet maze, using unique IP addresses to identify devices and networks.
+
+**4. DNS (Domain Name System):** Remember the internet's phonebook? That's DNS! It translates human-readable domain names like "[www.example.com](https://www.example.com): [https://www.example.com](https://www.example.com)" into numerical IP addresses that computers understand. This simplifies the user experience and allows us to remember names instead of complex numbers.
+
+**5. FTP (File Transfer Protocol):** This protocol facilitates the transfer of files between computers on the internet. Often used by developers to upload website files to web servers, FTP ensures reliable and efficient file transfer with features like progress tracking and error recovery.
+
+**6. REST (REpresentational State Transfer):** A popular architectural style for designing web APIs (Application Programming Interfaces), REST relies on HTTP requests and responses to exchange data between applications. Its simplicity, scalability, and widespread adoption make it a favorite for building modern web services.
+
+**7. GraphQL:** An alternative to REST, GraphQL allows clients (frontends) to specify exactly the data they need from an API. This can lead to more efficient data transfer and less server load compared to fetching everything with REST.
+
+These are just a few of the crucial protocols powering the web. Understanding their roles and functions equips you as a web developer to navigate the complex technological landscape, build efficient and secure web applications, and contribute to the ever-evolving digital world.
+
 ### Web Browsers: Compatibility Chameleons
 
 Remember, not all browsers are created equal. Different versions and capabilities can lead to inconsistencies in how websites appear and function. This is the challenge of **web browser compatibility**. As developers, we must strive to make our creations adaptable, chameleon-like, adjusting to the diverse landscape of browsers our users inhabit.
+
+#### 💻 Practice Zone
+
+Here is a useful website to check the support of features in different browsers [https://caniuse.com/](https://caniuse.com/?search=container)
 
 ## Static vs. Dynamic Websites: Two Flavors of the Web Cake
 
@@ -100,6 +176,8 @@ On the other hand, the **backend** is the powerhouse engine and data storage, hi
 
 **Both are essential for a successful website, just like both the facade and the foundation are crucial for a strong house.**
 ![Scripting](../intro_scripting.png)
+
+# Web Engineering
 
 ## Web Project Lifecycle: From Dream to Reality
 
