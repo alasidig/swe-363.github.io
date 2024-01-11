@@ -70,8 +70,72 @@ The best path is selected by a routing protocol based on the value or metric it 
 &lt;/summary>
 In data networking, telecommunications, and computer buses, an acknowledgment (ACK) is a signal that is passed between communicating processes, computers, or devices to signify acknowledgment, or receipt of message, as part of a communications protocol.
 &lt;/details>&lt;/p>
+&lt;h4 id="-practice-zone">💻 Practice Zone&lt;/h4>
+&lt;ul>
+&lt;li>&lt;a href="https://mxtoolbox.com/DNSLookup.aspx">Use this website for DNS lookup https://mxtoolbox.com/DNSLookup.aspx&lt;/a>&lt;/li>
+&lt;li>Run the following commands from the command prompt:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ipconfig &lt;span style="color:#75715e"># to find the ip address of the machine&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nslookup google.com &lt;span style="color:#75715e"># to do DNS query to get the IP of the domain&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="behind-the-scenes-the-journey-of-a-web-page">Behind the Scenes: The Journey of a Web Page&lt;/h3>
+&lt;p>&lt;strong>Let&amp;rsquo;s follow the path of a web page from the moment you type a URL to the instant it appears on your screen. It&amp;rsquo;s a fascinating journey involving multiple actors and a precise choreography of steps.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>1. User Initiates the Journey:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>You enter a URL (like &amp;ldquo;&lt;a href="https://www.example.com">www.example.com&lt;/a>&amp;rdquo;) into the browser&amp;rsquo;s address bar.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>2. DNS Lookup: Finding the Address:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The browser contacts a DNS (Domain Name System) server, the internet&amp;rsquo;s phonebook, to translate the human-readable URL into a numerical IP address that computers understand.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3. Browser Sends a Request:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The browser crafts a well-formatted HTTP request message, containing the URL, browser information, and other relevant details. It sends this message across the internet, aiming for the server at the specified IP address.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>4. Server Receives and Responds:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The web server, constantly listening for incoming requests, receives the message. It locates the requested web page files on its storage and packages them into a response message.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>5. Packet Delivery: The Journey Home:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The server sends the response message back to the browser, broken down into smaller packets of data. These packets travel through various routers and networks, finding the optimal path to reach the user&amp;rsquo;s device.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>6. Browser Reassembles and Renders:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The browser receives the packets, reassembles them into the complete web page, and begins rendering it on the screen. This involves interpreting HTML, CSS, and JavaScript code to create the visual layout and interactive elements.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>7. Fetching Additional Resources:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The browser doesn&amp;rsquo;t stop there! It also fetches any linked CSS stylesheets to apply styling and visual formatting to the page content.&lt;/li>
+&lt;li>It also fetches JavaScript files, which add dynamic behavior and interactive features to the page, enhancing user experience.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>8. Page Fully Displayed:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Once all resources are received and rendered, the web page appears in its full glory, ready for user interaction. This entire process usually happens within a few seconds, making the web feel seamless and responsive.&lt;/li>
+&lt;/ul>
+&lt;h4 id="-practice-zone-1">💻 Practice Zone&lt;/h4>
+&lt;p>Use the browser inspector and navigate to the networking tap to view network requests.&lt;/p>
+&lt;h3 id="under-the-hood-protocols-powering-the-web">Under the Hood: Protocols Powering the Web&lt;/h3>
+&lt;p>While we&amp;rsquo;ve explored the user-facing journey of accessing a web page, a complex network of protocols operates behind the scenes, ensuring smooth communication and data exchange. Let&amp;rsquo;s peek into some of the most important protocols for web development:&lt;/p>
+&lt;p>&lt;strong>1. HTTP (Hypertext Transfer Protocol):&lt;/strong> The very language of the web! HTTP governs communication between browsers and servers. It dictates how requests are formatted, how responses are sent, and the overall flow of information. Every click, every image download, every interaction on a website relies on HTTP.&lt;/p>
+&lt;p>&lt;strong>2. HTTPS (Hypertext Transfer Protocol Secure):&lt;/strong> Adding a layer of security to HTTP, HTTPS encrypts communication between browsers and servers using SSL/TLS protocols. This protects sensitive information like login credentials and financial data from eavesdropping and manipulation. In today&amp;rsquo;s online world, using HTTPS is essential for building trust and ensuring user privacy.&lt;/p>
+&lt;p>&lt;strong>3. TCP/IP (Transmission Control Protocol/Internet Protocol):&lt;/strong> These two protocols form the backbone of internet communication. TCP ensures reliable data delivery by breaking down information into packets, sequencing them, and requesting retransmission if any are lost. IP, on the other hand, routes these packets through the internet maze, using unique IP addresses to identify devices and networks.&lt;/p>
+&lt;p>&lt;strong>4. DNS (Domain Name System):&lt;/strong> Remember the internet&amp;rsquo;s phonebook? That&amp;rsquo;s DNS! It translates human-readable domain names like &amp;ldquo;&lt;a href="https://www.example.com">www.example.com&lt;/a>: &lt;a href="https://www.example.com">https://www.example.com&lt;/a>&amp;rdquo; into numerical IP addresses that computers understand. This simplifies the user experience and allows us to remember names instead of complex numbers.&lt;/p>
+&lt;p>&lt;strong>5. FTP (File Transfer Protocol):&lt;/strong> This protocol facilitates the transfer of files between computers on the internet. Often used by developers to upload website files to web servers, FTP ensures reliable and efficient file transfer with features like progress tracking and error recovery.&lt;/p>
+&lt;p>&lt;strong>6. REST (REpresentational State Transfer):&lt;/strong> A popular architectural style for designing web APIs (Application Programming Interfaces), REST relies on HTTP requests and responses to exchange data between applications. Its simplicity, scalability, and widespread adoption make it a favorite for building modern web services.&lt;/p>
+&lt;p>&lt;strong>7. GraphQL:&lt;/strong> An alternative to REST, GraphQL allows clients (frontends) to specify exactly the data they need from an API. This can lead to more efficient data transfer and less server load compared to fetching everything with REST.&lt;/p>
+&lt;p>These are just a few of the crucial protocols powering the web. Understanding their roles and functions equips you as a web developer to navigate the complex technological landscape, build efficient and secure web applications, and contribute to the ever-evolving digital world.&lt;/p>
 &lt;h3 id="web-browsers-compatibility-chameleons">Web Browsers: Compatibility Chameleons&lt;/h3>
 &lt;p>Remember, not all browsers are created equal. Different versions and capabilities can lead to inconsistencies in how websites appear and function. This is the challenge of &lt;strong>web browser compatibility&lt;/strong>. As developers, we must strive to make our creations adaptable, chameleon-like, adjusting to the diverse landscape of browsers our users inhabit.&lt;/p>
+&lt;h4 id="-practice-zone-2">💻 Practice Zone&lt;/h4>
+&lt;p>Here is a useful website to check the support of features in different browsers &lt;a href="https://caniuse.com/?search=container">https://caniuse.com/&lt;/a>&lt;/p>
 &lt;h2 id="static-vs-dynamic-websites-two-flavors-of-the-web-cake">Static vs. Dynamic Websites: Two Flavors of the Web Cake&lt;/h2>
 &lt;p>Imagine a website as a bakery. &lt;strong>Static websites&lt;/strong> are like pre-baked cookies, delicious and fixed in form. They offer stability and simplicity, perfect for informational portals or personal portfolios. On the other hand, &lt;strong>dynamic websites&lt;/strong> are like freshly baked cakes, responsive and ever-changing. They use scripting languages and databases to personalize experiences and interact with users, making them ideal for e-commerce platforms or social media.
 &lt;img src="../static.jpg" alt="Static vs dynamic">&lt;/p>
@@ -94,6 +158,7 @@ In data networking, telecommunications, and computer buses, an acknowledgment (A
 &lt;/ul>
 &lt;p>&lt;strong>Both are essential for a successful website, just like both the facade and the foundation are crucial for a strong house.&lt;/strong>
 &lt;img src="../intro_scripting.png" alt="Scripting">&lt;/p>
+&lt;h1 id="web-engineering">Web Engineering&lt;/h1>
 &lt;h2 id="web-project-lifecycle-from-dream-to-reality">Web Project Lifecycle: From Dream to Reality&lt;/h2>
 &lt;p>Every amazing website starts as a seed of an idea. The &lt;strong>web project lifecycle&lt;/strong> takes that seed and nurtures it into a flourishing digital garden. It involves meticulous &lt;strong>requirements gathering,&lt;/strong> creating blueprints like &lt;strong>wireframes,&lt;/strong> and then employing development methodologies like the &lt;strong>agile process&lt;/strong> to break down tasks into manageable sprints. Finally, we employ the &lt;strong>multi-tier architecture,&lt;/strong> the three-layered cake of browser, web server, and database, to bring the website to life in a secure and efficient manner.&lt;/p>
 &lt;!-- raw HTML omitted -->
@@ -1838,4 +1903,4 @@ showNext Function
 &lt;li>Randomize the answers&lt;/li>
 &lt;li>Add a timer for each question.&lt;/li>
 &lt;li>Create different types of questions: multiple answer, fill in the blank use regular expressions to check the user answer.&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>API Integration</title><link>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/api/</link><pubDate>Thu, 11 Jan 2024 08:28:13 +0300</pubDate><guid>http://alasidig.github.io/swe-363.github.io/courses/swe363/js/api/</guid><description>&lt;h1 id="coming-soon">Coming Soon&lt;/h1></description></item></channel></rss>
