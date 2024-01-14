@@ -4,7 +4,7 @@ date: 2024-01-10T11:26:19+03:00
 draft: false
 summary: Introduction to Web engineering and Development.
 weight: 2
-tags: [Networking, IP, DNS]
+tags: [Networking, IP, DNS, Wireframe, Agile]
 toc: true # Show table of contents? true/false
 type: docs # Do not modify.
 menu:
@@ -192,6 +192,95 @@ Every amazing website starts as a seed of an idea. The **web project lifecycle**
 - **Agile Development:** This is a flexible approach where we break down the project into small, iterative tasks and work in short sprints. It's like building the house room by room, constantly testing and refining as we go.
 - **Multi-Tier Architecture:** This is the layered structure of the website, with the browser at the top interacting with the web server, which in turn communicates with the database. It's like the different floors of the house, each with its own purpose and connected through stairs and hallways.
 
-By following this lifecycle, we ensure that websites are built efficiently, meet user needs, and are adaptable to future changes.
+By following this lifecycle, we ensure that websites are built efficiently, meet user needs, and are adaptable to future changes. Here is a more detailed discussion on these concepts:
 
-**This is just a glimpse into the exciting world of web development and engineering. Get ready to delve deeper, explore new technologies, and unleash your creativity to build beautiful, functional, and impactful websites!**
+<!-- **This is just a glimpse into the exciting world of web development and engineering. Get ready to delve deeper, explore new technologies, and unleash your creativity to build beautiful, functional, and impactful websites!** -->
+
+### Requirements Gathering
+
+This is where we understand the client’s vision, target audience, and website goals. It’s like talking to the homeowner to understand their needs and desired outcome for the house.
+
+In order to understand a holistic picture of the requirements, we need to first specify the stakeholders, which are anyone affected by the product such as end users, policymakers, domain experts, etc. Then, we use different methods such as interviews, focus groups, surveys, and on-site observation to elicit requirements from stakeholders.
+
+Each of the methods serves a different purpose and exposes aspects that cannot be seen by others. For instance, surveys are used for short yes/no or pre-defined answers where the goal is to validate a piece of information on a large scale, while interviews are used to uncover deep insights from people in a specific area. For example, let’s assume you are trying to build a web app that will help computer science students choose their career path after graduation. There are many questions you need to answer in order to understand the problem very well, then build an effective solution for it. Some examples include:
+
+- How easy or hard is it for current CS students to choose their career path? (Survey question)
+- What are the current fears/concerns that students face? (Start with an interview then run a survey to validate on a bigger scale)?
+- Why do they have these fears/concerns? (Interview)
+- What questions do they have about CS career paths? (Interviews)
+- What are their current ways they use to overcome those fears (interview/observation)
+
+These questions will uncover important issues and insight. A deep analysis of the information that we got will result on some ideas on how to address the issues. Indeed, any project given its limited budget and resources will not be able to address all the issues, however, we will focus on the most important issues and turn them into functional and non-functional requirements. These requirements are part of the Software Requirements Document (SRS).
+
+#### Practice Zone
+
+- Think of a problem that you’ve encountered yourself in your educational journey.
+- What are some questions that will help you understand the problem more deeply?
+- Which research method will help you answer each questions?
+- Practice asking one of these questions with your colleague (take turns)
+
+### Wireframing
+
+This is creating a rough sketch of the website’s layout and functionality. It is like drawing the floor plan of the house before construction begins.
+
+The goal of wireframing is to document and understand how the system will function from a user point of view. It is also called the low fidelity prototype of the system. It is used to discover all the possible interactions that a user can accomplish with your web app. It is also used to explore different ways of interaction and test their effectiveness before implementing them into real products. For instance, going back to our previous career path web app example, we can design two wireframes for the home page, each offering distinct features to cater to the diverse needs of computer science students.
+
+In the first wireframe, we prioritize a clean and intuitive interface. The homepage clearly displays categories such as 'Programming,' 'Data Science,' 'Networking,' and 'Cybersecurity,' allowing users to easily navigate to their area of interest. A concise menu at the top provides quick access to essential tools, such as career quizzes, industry insights, and a personalized dashboard. Additionally, a visually appealing infographic showcases trending technologies and job opportunities, offering a quick glance at the dynamic landscape of the tech industry.
+
+In contrast, the second wireframe adopts a more interactive approach. The homepage features a personalized onboarding process, where users are prompted to answer a series of questions about their skills, preferences, and career goals. Based on their responses, the app dynamically generates a customized career roadmap, recommending specific courses, internships, and networking events tailored to their individual needs. A chatbot in the corner provides instant assistance and encourages user engagement, fostering a sense of guidance and community.
+
+These two wireframes exemplify the flexibility of wireframing as a design tool, allowing us to explore different user experiences and functionalities before committing to a final design for our career path web app.
+
+Wireframes are designed using a variety of tools from as simple as sketching on a paper to specialized tools like Figma, which has many features that makes it easy for user interface designers to design web apps and mobile apps. Those features include designing for different screens, prototyping, assets management, and many 3rd party plugins that helps make the workflow much easier for both designers and developers.
+
+When designing wireframes, designers usually go from low fidelity (level of details) to high fidelity designs. Developers expect the wireframes to be as close as to the end product screens. They expect wireframes to include the following details:
+
+- **Navigational links**: Each screen’s interactive parts should have links to their destination screens. This will form what is called a prototype. The developer will be able to interact with the prototype before its development.
+- **Ready to export assets**: Each screen has a set of images, icons and even animations. These need to be ready for export in terms of meaning, sizes for different screens resolutions.
+- **A design system:** throughout the design, there will be certain components that will be reused multiple times such as colors, fonts, buttons, interactions, and other UI controls. These are usually put in a separate page in Figma as a reference so that developers can refer to them instead of working with each different instance in each page.
+
+Sharing the wireframe with developers in Figma is as easy as sharing the link with them or adding them as collaborators in the project. Developers will be able to enable “Dev Mode” and start implementing the designs to real code.
+
+#### Practice Zone
+
+- Go to [https://figma.com/](https://figma.com) and make an account using your .edu email
+- In a new project, design the following screen using Figma.
+  ![Figma exercise](../figma.png)
+
+### Agile Development
+
+This is a flexible approach where we break down the project into small, iterative tasks and work in short sprints. It’s like building the house room by room, constantly testing and refining as we go.
+
+In real life businesses, there are a lot of variables that tend to change all the time, such as market needs, new technologies, stakeholder opinions, new insights, customer behavior, seasonal events and many other stuff.
+
+What is good about software products is the ability to build them in chunks and keep evolving them with time, unlike physical products like cars and buildings. For example, you can launch the career path web app with only a home page that asks students to fill in some questions that will later help you improve the app much better. However, it is much harder to apply the same concept to cars, you cannot for example launch a car without tires or without seats.
+
+This advantage of software products relieved developers from the need to decide on all of the product features from the beginning of the project. Instead, a software product team can decided on a set of “Version 1” features and discover the rest later on based on customers' feedback. And this is especially applicable for web applications where end users do not have to “Update” their existing software to get the new features. It is just a matter of the developers deploy the new changes and they will be available to end users.
+
+There are many existing project management methods that are based on the concept of agile such Scrum, Lean, etc. The details of each of these is out of the scope of this course, however, they are all agile methods that share following ideas:
+
+- **Incremental delivery**: Each increment will go through the defining a small set of requirements, designing them into user interfaces and software models, building them into final products “Code”, launching or deploying them to end users, validating them through customer feedback, and repeat.
+- **Customer satisfaction first**: As mentioned in the last step of the incremental delivery, customer satisfaction is what will mainly drive the definition of the requirements of the next iteration.
+
+- **Small teams:** To be able to move faster, reduce the scheduling hassles, minimize the amount of documentation and reporting, agile teams tend to be small and all are on the same page. In such teams, a common ritual is what is called a standup meeting, that is a quick daily meeting that brings everyone onboard by allowing every member to share: what they have accomplished, what is their plan and if they have any obstacles.
+- **Minimal documentation:** The focus in agile team is to be productive and work on what matters. Traditional long documentation tend to change a lot which cost so much of productive time. Instead in agile teams, documentation is only done purposefully if it will add value for the product.
+
+- **Overall simplicity:** Simplicity is more of a mindset than a process. Embracing it overall will urge each team member starting with the leader to question each action if it will add unnecessary complexity or if it will move the progress forward. It will also have an direct effect on the design team, development team, and the business team while accomplishing their tasks.
+
+#### Practice Zone
+
+- Going back to the problem that you though of previously, think of the minimal set of features that you can build to address the problem.
+- Search the internet of the Scrum & Lean methods and compare/contrast them.
+
+### Multi-Tier Architecture
+
+![Two tire](../multitier.png)
+This is the layered structure of the website, with the browser at the top interacting with the web server, which in turn communicates with the database. It’s like the different floors of the house, each with its own purpose and connected through stairs and hallways.
+
+A multi-tier architecture in web applications means the separation of the different high level components of a web application. In its simplest form, the 2-tier architecture, the front-end (Client side code) is separated than the back-end (Server side code). The goal of separating the different components of a web application is to reduce dependency which will result in easier reusability of different components. For instance, having one “Back-End” and multiple clients, or in simple words a mobile app interface, a web app interface that connects to the same back-end.
+
+Another important reason why a multi-tier architecture is used is to allow clients with less computing resources to accomplish intensive processing tasks efficiently. In this case, the client-side code will call APIs (over HTTP, mostly) along with parameters, initiating the processing on the server side. The server, equipped with robust computational capabilities, handles resource-intensive tasks, such as complex algorithms, data analysis, or heavy computations related to career recommendations in our application.
+
+For instance, in our application, when a user requests a personalized career roadmap based on their skills and preferences, the client-side code sends a request to the server-side API, transmitting relevant parameters. The server then utilizes its processing power to analyze vast datasets, perform algorithmic calculations, and generate a tailored career plan. Once the processing is complete, the results are sent back to the client-side, where they are seamlessly integrated into the user interface.
+
+This division of labor not only optimizes the utilization of computing resources but also ensures a smooth user experience, as clients with varying device capabilities can efficiently access and benefit from the application. The multi-tier architecture, with its clear separation of concerns between client and server, enhances scalability, maintainability, and performance in applications dealing with resource-intensive tasks like career path recommendations for aspiring computer science students.
